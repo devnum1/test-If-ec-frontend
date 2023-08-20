@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InsurancePaymentCard match Snapshot 1`] = `
+"<div class=\\"insurance-payment-card\\">
+  <div class=\\"insurance-head\\">
+    <div class=\\"insurance-head__inner\\">
+      common.insurance_payment_amount
+    </div>
+  </div>
+  <div class=\\"insurance-body\\">
+    <div class=\\"insurance-body__inner\\">
+      <div class=\\"insurance-body__inner-input\\"><input name=\\"insuranceValue\\" value=\\"\\" placeholder=\\"---\\">
+        <div>
+          common.yen
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

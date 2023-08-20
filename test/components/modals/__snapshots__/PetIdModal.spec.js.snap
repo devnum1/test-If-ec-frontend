@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PetIdModal match Snapshot 1`] = `
+"<div class=\\"pet-id-modal\\">
+  <div class=\\"modal__overlay\\">
+    <div class=\\"modal__container\\">
+      <div class=\\"modal__close-button\\">
+        <div class=\\"icon-delete\\"></div>
+      </div>
+      <div class=\\"modal__body modal-claim\\">
+        <div class=\\"pet-id-card\\">
+          <div class=\\"id-card-container\\">
+            <div class=\\"peco-title\\">
+              common.peco_title
+            </div>
+            <div class=\\"id-edit\\" style=\\"display: none;\\"><button class=\\"id-edit__button\\">
+                common.button.edit
+              </button></div>
+            <h4 class=\\"pet-name font-weight-400 mt-26\\"><span></span> <span class=\\"pet-gender\\">common.kun</span></h4>
+            <div class=\\"id-card__pet-info-container\\">
+              <div class=\\"pet-info-grid\\">
+                <div class=\\"info-row\\">
+                  <div class=\\"card-icon\\"><i class=\\"icon-fonts icon-fonts--cake\\"></i></div>
+                  <div>
+                    ____.__
+                  </div>
+                </div>
+                <div class=\\"info-row\\">
+                  <div class=\\"card-icon\\"><i class=\\"icon-fonts icon-fonts--dog-foot\\"></i></div>
+                  <div>
+                    common.pet.cat
+                  </div>
+                </div>
+                <div class=\\"info-row\\">
+                  <div class=\\"card-icon\\"><i class=\\"icon-fonts icon-fonts--paper\\"></i></div>
+                  <div>
+                    Unknown
+                  </div>
+                </div>
+                <div class=\\"info-row\\"><img src=\\"~/assets/images/logo/2line_bg_white.svg\\" height=\\"36\\" class=\\"card-logo\\"></div>
+              </div>
+              <div class=\\"no-image-container\\"><img src=\\"~/assets/images/icon-dog.svg\\" class=\\"no-image\\"></div>
+            </div>
+          </div>
+        </div>
+        <div class=\\"get-home\\">
+          うちの子の写真を登録して、<br> うちの子だけのマイページにしよう！
+        </div> <button type=\\"button\\" class=\\"btn btn--default btn--icon-right test btn--full\\">
+          <!---->
+          <!----> <span class=\\"btn__text\\">編集画面へ</span> <i class=\\"icon-fonts icon-fonts--arrow-right\\"></i>
+          <!----></button>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

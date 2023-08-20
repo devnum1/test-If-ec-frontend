@@ -1,0 +1,61 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ======================================================
+// Page: new contract screen 0014
+// ======================================================
+
+.complele-check,
+.complete-check {
+  margin-top: 56px;
+
+  &__icon {
+    height: 32px;
+    width: 32px;
+    border-radius: $border-radius-circle;
+    font-size: $font-size-base;
+    color: $white;
+    margin: 0 auto;
+
+    .icon-fonts {
+      line-height: 33px;
+    }
+
+    &--warning {
+      background-image: url('~assets/images/icon-warning.svg');
+    }
+  }
+
+  &__text-warning {
+    color: $red;
+    line-height: 22.5px;
+    margin-top: 13px;
+    font-size: $font-size-base + 4;
+  }
+
+  &__text-success {
+    color: $green;
+    line-height: 1.3;
+    margin-top: 13px;
+  }
+
+  &__content {
+    font-size: $font-size-base;
+    color: rgba($black, 0.6);
+    line-height: 1.5;
+    margin-bottom: 73px;
+  }
+
+  &__text {
+    margin-bottom: 16px;
+    padding: 0 17px;
+  }
+}
+
+.mt-49 {
+  margin-top: 49px;
+}
+
+.mw-279 {
+  max-width: 279px;
+  margin: 0 auto;
+}

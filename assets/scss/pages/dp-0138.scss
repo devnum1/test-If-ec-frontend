@@ -1,0 +1,267 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.contract-info {
+  margin-top: 25px;
+  font-family: $font-family-primary;
+
+  &__top {
+    &-title {
+      font-size: 24px;
+      line-height: 30px;
+      color: rgba($black, 0.6);
+      margin-bottom: 5px;
+    }
+
+    &-subtitle {
+      color: rgba($black, 0.4);
+      font-size: $font-size-base;
+      line-height: 21px;
+    }
+  }
+
+  &__section-title {
+    font-weight: normal;
+  }
+
+  &__button-cancel {
+    color: $green;
+    cursor: pointer;
+  }
+
+  .contract-card {
+    background-color: $white;
+    border-radius: 6px;
+    border: 1px solid rgba($green, 0.15);
+    text-align: center;
+    padding: 16px;
+
+    &__title {
+      color: $green;
+      font-size: 24px;
+      margin-bottom: 17px;
+      line-height: 30px;
+    }
+
+    &__date {
+      color: rgba($black, 0.4);
+      font-size: 14px;
+    }
+
+    &-list {
+      &__item {
+        &::before {
+          content: '\2022';
+          color: $green;
+          font-weight: bold;
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+
+  .explain {
+    color: rgba($black, 0.82);
+  }
+
+  .text-dark-gray {
+    color: rgba($black, 0.5);
+  }
+}
+
+.update-schedule {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+
+  &__date {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba($black, 0.82);
+
+    .small-text {
+      font-size: 10px;
+      line-height: 13px;
+      color: rgba($black, 0.5);
+    }
+  }
+
+  &__button {
+    text-align: right;
+  }
+}
+
+.contract-info-table {
+  .unit {
+    font-size: 10px;
+  }
+
+  .highlight-price {
+    color: $green;
+    font-size: 24px;
+  }
+
+  .small-text {
+    color: rgba($black, 0.6);
+    font-size: 12px;
+  }
+
+  .multiple-line {
+    div {
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
+    }
+  }
+}
+
+::v-deep .info-box__title {
+  flex: 0 0 30%;
+}
+
+.contain-table {
+  .table-inside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20%;
+
+    .inner-table {
+      &-row {
+        padding: 0 0 10px 0;
+        position: relative;
+
+        &:not(:last-child):after {
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+          background-image: linear-gradient(
+            to right,
+            rgba($black, 0.15) 50%,
+            $white 10%
+          );
+          background-position: bottom;
+          background-size: 5px 1px;
+          background-repeat: repeat-x;
+        }
+      }
+    }
+  }
+
+  .info-box {
+    &__title {
+      width: 100%;
+    }
+  }
+}
+
+.card-number {
+  border-bottom: 0.5px solid rgba(10, 10, 10, 0.15);
+  padding-bottom: 10px;
+}
+
+.cancel-button {
+  text-align: center;
+
+  ::v-deep button {
+    min-width: 280px;
+  }
+
+  .btn {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    height: 56px;
+  }
+
+  .btn__text {
+    color: rgba($black, 0.5) !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+  }
+}
+
+.test {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  height: 56px;
+
+  .btn__text {
+    color: rgba($black, 0.5) !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+  }
+}
+
+.green-tag {
+  background-color: $green;
+  color: white;
+  padding: 1px 5px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid rgba($black, 0.15);
+  margin-left: 8px;
+}
+
+.view-document {
+  .info-box__title {
+    color: rgba($black, 0.82);
+    flex: auto;
+    font-size: 16px;
+  }
+
+  .icon-view {
+    transform: rotate(180deg);
+    font-size: 12px;
+    color: rgba($black, 0.6);
+  }
+}
+
+.sick-box {
+  border: 1px solid rgba($black, 0.15);
+  border-radius: 8px;
+  padding: 16px;
+
+  &__title {
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: rgba($black, 0.6);
+  }
+
+  &__item {
+    line-height: 1.7;
+    color: rgba($black, 0.5);
+    font-size: 12px;
+
+    &:before {
+      content: '・';
+    }
+  }
+}
+
+::v-deep .btn__customer-info {
+  border: 1px solid rgba($black, 0.15);
+  height: 56px;
+  background-color: $white;
+  .btn__text {
+    color: rgba($black, 0.5);
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+.payment-date:after {
+  color: $base-gray;
+  position: relative;
+  font-size: 8px;
+  top: -9px;
+  content: '※';
+}
+
+.noti-anniversary {
+  color: rgba($black, 0.5);
+  font-size: 12px;
+  margin-top: 10px;
+}

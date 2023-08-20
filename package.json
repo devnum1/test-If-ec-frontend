@@ -1,0 +1,72 @@
+{
+  "name": "lf-ec-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "husky install",
+    "dev": "cross-env APP_ENV=dev nuxt",
+    "build:dev": "cross-env APP_ENV=dev nuxt build",
+    "build:stg": "cross-env APP_ENV=stg nuxt build",
+    "build": "cross-env APP_ENV=prod nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest",
+    "lint-fix": "eslint --cache --fix './**/*.{js,vue}' && prettier --write './**/*.{js,vue}'"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn run eslint --cache --fix",
+      "yarn run prettier --write",
+      "yarn test -passWithNoTests"
+    ],
+    "*.vue": [
+      "yarn run eslint --cache --fix",
+      "yarn run prettier --write",
+      "yarn test -passWithNoTests"
+    ]
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.3",
+    "@nuxtjs/gtm": "^2.4.0",
+    "aws-amplify": "^3.3.14",
+    "bootstrap": "^4.6.2",
+    "bootstrap-vue": "^2.23.1",
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.3",
+    "crypto-js": "^4.0.0",
+    "dayjs": "^1.8.20",
+    "eslint": "^8.42.0",
+    "eslint-plugin-vue": "^7.2.0",
+    "moment": "^2.29.1",
+    "node-gyp": "^9.3.1",
+    "nuxt": "^2.16.3",
+    "nuxt-i18n": "^6.16.0",
+    "v-click-outside": "^3.1.2",
+    "v-mask": "^2.2.4",
+    "vee-validate": "2.1.7",
+    "vue-cookies": "^1.7.4",
+    "vue-email-dropdown": "^2.2.3",
+    "vue-multiselect": "^2.1.6",
+    "vue-scroll-picker": "^0.7.1",
+    "vue-slick-carousel": "^1.0.6",
+    "vue2-smooth-scroll": "^1.5.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@vue/test-utils": "^1.1.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^26.5.0",
+    "eslint-config-prettier": "^8.8.0",
+    "flush-promises": "^1.0.2",
+    "husky": "^8.0.3",
+    "jest": "^26.5.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "vue-jest": "^3.0.4"
+  },
+  "volta": {
+    "node": "18.16.0"
+  }
+}

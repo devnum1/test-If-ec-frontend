@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectedInsuranceCard match Snapshot 1`] = `
+"<div class=\\"selected-insurance-card\\">
+  <div class=\\"insurance-head\\">
+    <div class=\\"insurance-head__inner\\">
+      52
+    </div>
+  </div>
+  <div class=\\"insurance-body\\">
+    <div class=\\"insurance-body__inner\\">
+      <div>
+        :&nbsp;
+      </div>
+      <div class=\\"insurance-body__inner-price\\">
+        3,725,600
+      </div>
+      <div>
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</div>"
+`;

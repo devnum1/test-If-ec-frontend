@@ -1,0 +1,57 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ======================================================
+// Components :: Label
+// ======================================================
+
+.base-label {
+  $base-label: &;
+  font-family: $font-family-base;
+  text-align: left;
+  color: rgba($black, 0.6);
+
+  &__text {
+    font-size: $font-size-base + 2;
+    line-height: 1;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__required {
+    background-color: $red;
+    height: 17px;
+    font-size: $font-size-base - 4;
+    color: $white;
+    line-height: 1.5;
+    border-radius: $border-radius-base + 10;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: 6px;
+    margin-top: 1px;
+    width: 36px;
+  }
+
+  &__help {
+    color: $gray;
+    font-size: $font-size-base - 2;
+    line-height: 16px;
+    margin-bottom: 12px;
+  }
+
+  &--custom {
+    #{$base-label}__main {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    #{$base-label}__required {
+      display: inline-block;
+      margin-left: 0;
+      top: -4px;
+    }
+  }
+}

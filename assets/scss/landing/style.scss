@@ -1,0 +1,2113 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ------------------------- import styles
+@import 'base';
+@import 'accordion';
+@import 'tab';
+@import 'parts';
+
+// ------------------------- layout
+
+.main {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.section {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.section-inner {
+  margin: 0 $margin;
+}
+
+.section-wrapper {
+  margin: 0 $margin-xl;
+}
+
+.landing-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  background-color: $white;
+}
+
+// ------------------------- header
+
+header.header {
+  max-width: $max-width;
+  margin: 0 auto -10px;
+  padding: 20px 0 0;
+  text-align: center;
+  background-color: $white;
+
+  img {
+    width: 335px;
+    max-width: 95%;
+  }
+}
+
+// ------------------------- top
+section.top {
+  margin-bottom: 24px;
+  text-align: center;
+
+  .title01 {
+    img {
+      width: auto;
+    }
+  }
+
+  .note {
+    @include breakpoint-down(smallnormal) {
+      font-size: 9.6px;
+    }
+
+    + .note {
+      margin-top: 10px;
+    }
+  }
+}
+
+.top-img {
+  padding: 0 26px 175px 29px;
+  background-image: url('#{$img}/photo.svg');
+  background-position: center 81px;
+  background-repeat: no-repeat;
+  background-size: 340px;
+  margin-bottom: 0;
+}
+
+.top-attention-img {
+  padding: 0 2px;
+  margin-bottom: -5px;
+}
+
+.top-attention-text {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 29px;
+
+  @include breakpoint-down(tinyphone) {
+    font-size: 18px;
+  }
+
+  .title-class {
+    .info-text {
+      color: $orange;
+      font-size: 30px;
+      position: relative;
+      line-height: 1;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 24px;
+      }
+
+      &:after {
+        content: '※2';
+        position: absolute;
+        top: 8px;
+        right: 4px;
+        transform: translateX(120%);
+        font-size: 11px;
+        font-weight: normal;
+
+        @include breakpoint-down(tinyphone) {
+          font-size: 6px;
+          top: 9px;
+        }
+      }
+    }
+
+    .small {
+      font-weight: bold;
+    }
+  }
+}
+
+.top-content {
+  padding: 16px;
+  margin-bottom: 25px;
+  background-color: $green;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8px;
+
+  &-item {
+    border: 2px solid $white;
+    padding: 16px 5px;
+
+    &__title {
+      color: $white;
+      font-size: 15px;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 12px;
+      }
+    }
+
+    &__info {
+      color: $yellow;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.5;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 24px;
+      }
+
+      @include breakpoint-down(smallnormal) {
+        font-size: 25px;
+      }
+
+      .small {
+        font-size: 15px;
+        font-weight: bold;
+
+        @include breakpoint-down(tinyphone) {
+          font-size: 12px;
+        }
+
+        &.right {
+          margin-left: -5px;
+        }
+
+        &.left {
+          margin-right: -5px;
+        }
+      }
+
+      .info-text {
+        position: relative;
+
+        &:first-child:after {
+          content: '※3';
+          position: absolute;
+          top: 7px;
+          right: 0;
+          transform: translateX(120%);
+          font-size: 7.72px;
+          color: white;
+          font-weight: normal;
+          font-family: 'Noto Sans JP';
+
+          @include breakpoint-down(tinyphone) {
+            font-size: 6px;
+            top: 6px;
+          }
+        }
+
+        &:last-child:after {
+          content: '※4';
+          position: absolute;
+          top: 7px;
+          right: 2px;
+          transform: translateX(120%);
+          font-size: 7.72px;
+          color: white;
+          font-weight: normal;
+          font-family: 'Noto Sans JP';
+
+          @include breakpoint-down(tinyphone) {
+            font-size: 6px;
+            top: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ------------------------- case
+section.case {
+  position: relative;
+
+  .note {
+    margin-top: 8px;
+    margin-bottom: 37px;
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 10px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.case-inner {
+  position: relative;
+  padding: 44px 16px 0;
+  margin: 0 -#{$margin-xl} 0;
+  background-color: $green;
+}
+.triangle-div {
+  background: transparent;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  height: 50px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-bottom: 10%;
+    background: $green;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    top: 0;
+  }
+}
+
+.title {
+  &--underline {
+    position: relative;
+    background-color: transparent;
+    z-index: 2;
+    display: inline-block;
+
+    &:after {
+      content: '';
+      height: 60%;
+      width: 100%;
+      background-color: $yellow;
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 50%;
+    }
+  }
+}
+
+.case-list {
+  .case-item {
+    &__block {
+      background-color: $white;
+      border-radius: 6px;
+      padding: 24px 30px;
+      text-align: center;
+      width: 317px;
+      margin: 0 auto;
+      margin-bottom: 14px;
+
+      @include breakpoint-down(tinyphone) {
+        width: 100%;
+        padding: 24px 15px;
+      }
+
+      .case-title {
+        color: $green;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1;
+
+        @include breakpoint-down(tinyphone) {
+          font-size: 14px;
+        }
+
+        &-highlight {
+          color: $black;
+          font-size: 21px;
+          font-weight: bold;
+          line-height: 1.3;
+
+          @include breakpoint-down(tinyphone) {
+            font-size: 19px;
+          }
+        }
+      }
+      .problem {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        margin-top: -5px;
+
+        &.reserve {
+          grid-template-columns: 1fr 2fr;
+          margin-top: 15px;
+
+          > div:first-child {
+            padding: 0 4px;
+          }
+
+          .bubble {
+            p {
+              float: right;
+              padding: 12px;
+              padding-left: 15px;
+              width: 92%;
+            }
+          }
+        }
+
+        .bubble {
+          p {
+            background-color: $green;
+            color: $white;
+            border-radius: 8px;
+            padding: 5.5px 0px 8px 6px;
+            font-size: 11px;
+            width: 94%;
+            text-align: left;
+            position: relative;
+            font-weight: 500;
+
+            &:after {
+              content: '';
+              -webkit-transform: rotate(360deg);
+              position: absolute;
+              border-style: inset;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              top: 50%;
+            }
+          }
+
+          &-right {
+            p:after {
+              transform: translate(95%, -50%);
+              border-width: 5px 0 5px 10px;
+              border-color: transparent transparent transparent $green;
+              right: 0;
+            }
+          }
+
+          &-left {
+            p:after {
+              border-width: 6px 12px 6px 0;
+              border-color: transparent $green transparent transparent;
+              left: 0;
+              transform: translate(-70%, -50%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.text-white {
+  color: white !important;
+}
+.case-content {
+  text-align: center;
+
+  img {
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    &:nth-child(2) {
+      padding-left: 13px;
+      width: 345px;
+      padding-right: 0;
+
+      @include breakpoint-down(tinyphone) {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(3) {
+      padding: 0;
+    }
+  }
+
+  .case-note {
+    font-size: 12px;
+    color: white;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    @include breakpoint-down(smallnormal) {
+      font-size: 11px;
+    }
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 10px;
+    }
+  }
+
+  .case-content-title {
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    position: relative;
+    margin-bottom: 26px;
+    font-weight: 500;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-image: url('#{$img}/path.svg');
+      background-repeat: repeat-x;
+      background-position: left bottom;
+      width: 95%;
+      height: 5px;
+    }
+
+    .highlight {
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.title-highlight {
+  color: $black;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.3;
+  width: 100%;
+
+  @include breakpoint-down(tinyphone) {
+    font-size: 19px;
+  }
+}
+
+.view-pdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-area {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    margin: 0 15px 21px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .insurance-text {
+    &__title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    &__pdf {
+    }
+  }
+
+  .pdf-button {
+    background-color: $white;
+    color: $green;
+    padding: 1px 5px;
+    border: 1px solid rgba($black, 0.15);
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.5;
+
+    &-container {
+      padding: 10px;
+    }
+  }
+
+  i {
+    vertical-align: middle;
+
+    &:before {
+      font-size: 22px;
+    }
+  }
+}
+
+.case-text {
+  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 22px;
+
+  span {
+    display: inline-block;
+    margin: -2.8em -14px 0 -3px;
+    font-size: 10px;
+    color: $gray-dark;
+    vertical-align: middle;
+  }
+}
+
+.case-result {
+  .ad-txt {
+    .section-inner {
+      .case-content-title {
+        color: $base-black;
+
+        @include breakpoint-down(tinyphone) {
+          font-size: 16px;
+        }
+
+        &:nth-child(1) {
+          margin: 0 0 23px 0;
+
+          @include breakpoint-down(smallnormal) {
+            font-size: 19px;
+          }
+
+          @include breakpoint-down(tinyphone) {
+            font-size: 15px;
+          }
+        }
+
+        &:nth-child(3) {
+          margin: 11px 0 17px;
+        }
+
+        .no-6 {
+          position: relative;
+
+          &:after {
+            content: '※5';
+            position: absolute;
+            color: $base-gray;
+            top: 0;
+            left: 60%;
+            transform: translate(12px, -75%);
+            font-size: 7.72px;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+
+  .logo {
+    img {
+      height: 100px;
+      margin-top: -10px;
+    }
+  }
+
+  .ad-ribbon {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    margin: 0;
+    grid-gap: 15px;
+
+    .ad-txt {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: right;
+    }
+  }
+
+  .title-highlight {
+    font-size: 20px;
+    text-align: center;
+
+    &.font-18px {
+      font-size: 18px;
+    }
+  }
+
+  .btn01 {
+    padding: 0 15px;
+  }
+}
+
+.intro-price {
+  .case-content-title {
+    font-size: 18px;
+    color: $base-black;
+    margin: 14px auto 25px;
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 15px;
+      margin: 12px auto 28px;
+    }
+  }
+
+  .overflow-img {
+    img {
+      width: calc(100% + 8px);
+    }
+  }
+}
+
+.result {
+  margin-bottom: 47px;
+}
+
+.result-lead {
+  margin-bottom: 27px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: $green;
+  text-align: center;
+
+  @include breakpoint-down(tinyphone) {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+.result-logo {
+  margin-bottom: 10px;
+}
+
+.result-content {
+  margin-bottom: 5px;
+}
+
+// ------------------------- point
+section.point {
+  padding-bottom: 28px;
+  background-color: $gray;
+}
+
+.point-title {
+  text-align: center;
+
+  .option {
+    // padding: 29px 67px 2px;
+    box-sizing: border-box;
+    height: 80px;
+    margin: 20px auto 12px;
+  }
+
+  .text {
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+    color: $green-dark;
+  }
+}
+
+.point-summary {
+  margin-bottom: 24px;
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 11px;
+    margin-bottom: 30px;
+
+    .note-open {
+      grid-column: 1 / span 2;
+      padding-left: 17px;
+      padding-right: 17px;
+
+      &.open_2 {
+        margin-bottom: 0;
+      }
+
+      .note {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+
+      .toggle-note {
+        background-color: rgba($white, 0.4);
+        margin: 10px 0 0;
+      }
+    }
+  }
+
+  .point-item {
+    background-color: $green;
+    border-radius: 5px;
+    text-align: center;
+    color: $white;
+    padding-bottom: 24px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .point-image {
+      img {
+        width: 72%;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+    }
+
+    .point-title-text {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 10px;
+      line-height: 22.5px;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 15px;
+      }
+    }
+
+    .paragraph {
+      font-size: 15px;
+      color: $white;
+      margin: 17px 18px;
+      text-align: left;
+      line-height: 1.4;
+
+      @include breakpoint-down(smallnormal) {
+        font-size: 14px;
+      }
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 12px;
+      }
+    }
+
+    .note {
+      color: $white;
+      margin: 0 19px;
+      font-size: 12px;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 10px;
+      }
+    }
+
+    .company-name {
+      font-size: 28px;
+      line-height: 1;
+      padding-top: 8px;
+      display: block;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 25px;
+      }
+    }
+
+    &__item-1 {
+      .compensation {
+        background-color: $green-3;
+        border-radius: 5px;
+        text-align: left;
+        margin: 36px 19px 17px;
+        padding: 20px 16px 0;
+        overflow: hidden;
+
+        @include breakpoint-down(tinyphone) {
+          padding: 18px 12px 0;
+          margin-top: 30px;
+        }
+
+        &__title {
+          color: $yellow;
+          font-weight: $font-weight-black;
+          font-size: 26px;
+          margin-bottom: 10px;
+
+          @include breakpoint-down(smallnormal) {
+            font-size: 24px;
+          }
+
+          @include breakpoint-down(tinyphone) {
+            font-size: 21px;
+          }
+        }
+
+        &__list-item {
+          display: grid;
+          grid-template-columns: 24px auto;
+          grid-gap: 10px;
+          align-items: center;
+          margin-bottom: 16px;
+
+          @include breakpoint-down(tinyphone) {
+            grid-template-columns: 20px auto;
+          }
+
+          .check-icon {
+            img {
+              width: 24px;
+
+              @include breakpoint-down(tinyphone) {
+                width: 20px;
+              }
+            }
+          }
+
+          &-content {
+            font-size: 15px;
+            line-height: 1.5;
+
+            @include breakpoint-down(tinyphone) {
+              font-size: 13px;
+            }
+
+            p {
+              margin-bottom: 0;
+              line-height: 22px;
+            }
+
+            .highlight {
+              font-size: 24px;
+              font-weight: bold;
+              line-height: 34.75px;
+
+              &.line-height-small {
+                line-height: 28px;
+              }
+
+              @include breakpoint-down(tinyphone) {
+                font-size: 22px;
+              }
+            }
+          }
+        }
+
+        > p {
+          @include breakpoint-down(tinyphone) {
+            font-size: 13px;
+          }
+        }
+
+        .mb-95 {
+          margin-bottom: 9.5px;
+        }
+
+        .no-7 {
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    &__item-3 {
+      .point-title-text {
+        margin-top: 8px;
+      }
+    }
+
+    &__item-4 {
+      .paragraph {
+        margin-top: 16px;
+
+        @include breakpoint-down(smallnormal) {
+          font-size: 13px;
+        }
+      }
+
+      .ad-area {
+        margin: 0 18px 16px;
+        background-color: $white;
+        border-radius: 6px;
+        padding: 16px 0 0;
+
+        .title {
+          color: $green-dark;
+          font-size: 15px;
+
+          @include breakpoint-down(tinyphone) {
+            font-size: 12px;
+          }
+        }
+
+        .title-no-6 {
+          font-size: 18px;
+          color: $black-6;
+          font-weight: bold;
+          position: relative;
+
+          @include breakpoint-down(tinyphone) {
+            font-size: 15px;
+          }
+
+          &:after {
+            content: '※5';
+            position: absolute;
+            top: 0;
+            right: 29%;
+            transform: translateY(-34%);
+            font-size: 11px;
+            color: $base-gray;
+            font-weight: normal;
+          }
+        }
+
+        .highlight-underline {
+          font-weight: bold;
+          font-size: 18px;
+          position: relative;
+          background: linear-gradient(to bottom, transparent 50%, $yellow 51%);
+
+          @include breakpoint-down(tinyphone) {
+            font-size: 15px;
+          }
+        }
+
+        .highlight {
+          font-size: 18px;
+          font-weight: bold;
+
+          @include breakpoint-down(tinyphone) {
+            font-size: 15px;
+          }
+        }
+
+        .ad-image {
+          display: grid;
+          grid-template-columns: 5fr 2fr;
+          grid-gap: 10.5px;
+          padding: 7px 7px 14px;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.point-list {
+  text-align: center;
+  margin: 0 -15px;
+
+  > li {
+    padding: 32px $margin 28px;
+    background-color: $green;
+
+    .top {
+      width: auto;
+      margin-bottom: 12px;
+
+      + img {
+        margin-bottom: 24px;
+      }
+    }
+
+    + li {
+      margin-top: 24px;
+    }
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $green-dark;
+
+    span {
+      padding: 3px 0 3px 4px;
+      background: linear-gradient(transparent 50%, $yellow 50%);
+    }
+  }
+
+  .type {
+    margin: 27.5px 0 14px;
+    font-size: 12px;
+    color: $green-dark;
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 10px;
+    }
+
+    span {
+      padding: 4px 14px;
+      border: 1px solid $green-dark;
+      margin: 0 2px;
+    }
+  }
+}
+
+.point-type {
+  .header {
+    padding-bottom: 58px;
+    border-bottom: 4px solid $green-dark;
+
+    .title-radius {
+      margin: 0 20px;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.3;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  > li {
+    padding: 23px 0 0;
+    background-color: $white;
+
+    + li {
+      margin-top: 16px;
+    }
+  }
+}
+
+.point-text {
+  margin-bottom: 18px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: $white;
+  text-align: left;
+
+  .rubi-box {
+    position: relative;
+
+    .rubi {
+      @include centering;
+
+      margin-top: -1.2em;
+      font-size: 10px;
+      white-space: nowrap;
+    }
+  }
+
+  .num {
+    display: inline-block;
+    margin: -2.8em -14px 0 -3px;
+    font-size: 10px;
+    vertical-align: middle;
+  }
+
+  + .note {
+    color: $white;
+  }
+}
+
+// ------------------------- caution
+section.caution {
+  margin-bottom: 48px;
+
+  .title03 {
+    margin-bottom: 16px;
+  }
+}
+
+.caution-text {
+  margin: 27px 0 19px;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 500;
+
+  @include breakpoint-down(tinyphone) {
+    font-size: 12px;
+  }
+
+  span {
+    font-weight: 700;
+    word-break: keep-all;
+  }
+
+  .lead {
+    font-size: 18px;
+
+    img {
+      width: 173px;
+      vertical-align: bottom;
+      margin-bottom: 0;
+    }
+  }
+
+  + .caution-text {
+    padding: 6px 0;
+    margin-top: 33px;
+    line-height: 2;
+  }
+}
+
+.caution-content {
+  margin: 0 6px 24px;
+
+  .note {
+    .text {
+      font-size: 10px;
+    }
+  }
+}
+
+// ------------------------- coverage
+section.coverage {
+  margin-bottom: 25px;
+}
+
+.coverage-list {
+  margin: 0 16px 0;
+  background-color: $green;
+  border-radius: $radius;
+
+  .note {
+    color: $white;
+    font-size: 12px;
+    margin: 18px -5px 24px;
+    padding-bottom: 32px;
+    text-align: justify;
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 10px;
+    }
+
+    .num {
+      width: 37px;
+    }
+  }
+
+  > li {
+    padding: 32px 21.5px 0px;
+  }
+}
+
+.coverage-title {
+  padding: 5px 0;
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+  color: $green;
+  text-align: center;
+  background-color: $white;
+  border-radius: 100px;
+
+  @include breakpoint-down(smallnormal) {
+    line-height: 1.2;
+  }
+}
+
+.coverage-content {
+  color: $white;
+  padding: 0 14px;
+
+  > img {
+    margin-bottom: 16px;
+  }
+
+  .for-accordion {
+    width: 100%;
+  }
+}
+
+.coverage-breed {
+  position: relative;
+  min-height: 59px;
+  padding: 8px 24px 27px;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  font-weight: bold;
+  border: 2px solid $white;
+  text-align: justify;
+
+  @include breakpoint-down(smallnormal) {
+    padding-left: 22px;
+    padding-right: 22px;
+    font-size: 11.5px;
+  }
+
+  @include breakpoint-down(tinyphone) {
+    font-size: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &::after {
+    @include centering(true, false);
+
+    bottom: -16px;
+    width: 32px;
+    height: 32px;
+    background-image: url('#{$img}/icon-arrow-circle-down.svg');
+    background-size: cover;
+    content: '';
+    transition: 0.5s;
+  }
+
+  &.ls-0 {
+    letter-spacing: 0;
+  }
+
+  span:not(.dot) {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 22px;
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 13px;
+    }
+  }
+
+  .dot.dot-03 {
+    letter-spacing: -0.3em;
+  }
+
+  .dot.dot-015 {
+    letter-spacing: -0.15em;
+  }
+}
+
+.coverage-answer {
+  min-height: 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.coverage-text {
+  margin-bottom: 24px;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 500;
+
+  span {
+    font-size: 18px;
+    font-weight: 700;
+
+    img {
+      width: 157px;
+      vertical-align: bottom;
+      margin-bottom: -2px;
+    }
+  }
+}
+
+// ------------------------- course
+section.course {
+  position: relative;
+  padding: 70px 0 44px;
+  color: $white;
+  text-align: center;
+  background-color: $green;
+
+  .note {
+    margin: 8px 10px 0;
+    color: $white;
+  }
+}
+
+.course-text {
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.course-table {
+  margin-bottom: 17px;
+}
+
+// ------------------------- example
+section.example {
+  margin-bottom: 46px;
+  text-align: center;
+
+  .note-open {
+    padding-left: 17px;
+    padding-right: 17px;
+
+    .toggle-note {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  }
+}
+
+.example-title {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 500;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.example-option {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: $gray-dark;
+  font-weight: 500;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background-color: $gray-dark;
+    content: '';
+  }
+
+  &::before {
+    left: -23px;
+    transform: rotate(60deg);
+  }
+
+  &::after {
+    right: -23px;
+    transform: rotate(-60deg);
+  }
+}
+
+.example-list {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* IE, Edge 対応 */
+  scrollbar-width: none; /* Firefox 対応 */
+
+  &::-webkit-scrollbar {
+    /* Chrome, Safari 対応 */
+    display: none;
+  }
+
+  li {
+    display: inline-block;
+    width: 81%;
+    // height: 277px;
+    margin: 0 32px;
+
+    + li {
+      margin-left: -20px;
+    }
+  }
+}
+
+.example-note {
+  .note {
+    margin: 0 0 32px;
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 10px;
+    }
+  }
+}
+
+.example-content {
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 7px;
+  font-weight: bold;
+
+  .example-item {
+    background-color: $gray;
+    border-radius: 4px;
+    padding: 16px 8px;
+    display: flex;
+    flex-direction: column;
+
+    .pet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      font-size: 10px;
+      align-items: center;
+      line-height: 12px;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 8px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .course-xample {
+      border-radius: 20px;
+      background-color: $green;
+      color: $white;
+      font-weight: bold;
+      margin: 9px 0;
+      font-size: 10px;
+      padding: 1px;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 12px;
+      }
+    }
+
+    .course-price {
+      font-size: 10px;
+      @include breakpoint-down(tinyphone) {
+        font-size: 8px;
+      }
+
+      .price-num {
+        font-size: 30px;
+        font-family: $font-family-secondary;
+        font-weight: 700;
+
+        @include breakpoint-down(tinyphone) {
+          font-size: 25px;
+        }
+      }
+
+      .price-unit {
+        font-size: 18px;
+
+        @include breakpoint-down(tinyphone) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.example-text {
+  margin: 0 -4px 7px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: $black;
+  font-weight: 500;
+
+  @include breakpoint-down(tinyphone) {
+    font-size: 12px;
+  }
+}
+
+.anual-limit {
+  &__title {
+    color: $green-dark;
+    margin-top: 10.6px;
+    font-weight: $font-weight-medium;
+    margin-bottom: 4px;
+    line-height: 22px;
+  }
+
+  &__case-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid $green-dark;
+    padding: 9px 3px;
+    background-color: $white;
+
+    .title {
+      font-size: 12px;
+      color: $base-black;
+
+      @include breakpoint-down(smallnormal) {
+        font-size: 11px;
+      }
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 10px;
+      }
+    }
+
+    .amount {
+      color: $green-dark;
+      font-size: 12px;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 10px;
+      }
+
+      .highlight {
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 1;
+        margin-right: -3px;
+
+        @include breakpoint-down(tinyphone) {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+// ------------------------- request
+section.request {
+  text-align: center;
+  color: $black;
+
+  .desc {
+    font-size: 18px;
+    margin: 30px -8px 24px;
+    text-align: left;
+    line-height: 21px;
+
+    @include breakpoint-down(smallnormal) {
+      font-size: 17px;
+    }
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 15px;
+    }
+  }
+
+  .big-title {
+    color: $green;
+    font-size: 22px;
+    font-weight: bold;
+
+    @include breakpoint-down(smallnormal) {
+      font-size: 21px;
+    }
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 18px;
+    }
+  }
+
+  .card-img {
+    margin-top: 47px;
+    margin-bottom: 63px;
+    text-align: center;
+
+    img {
+      width: 217px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.request-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+
+  @include breakpoint-down(tinyphone) {
+    font-size: 12px;
+  }
+
+  span {
+    font-weight: $font-weight-black;
+    font-size: 24px;
+    position: relative;
+
+    &:after {
+      content: '※6';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -9px;
+      font-size: 11px;
+      color: $base-gray;
+      font-weight: normal;
+    }
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 22px;
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background-color: $black;
+    content: '';
+  }
+
+  &::before {
+    left: -23px;
+    transform: rotate(60deg);
+  }
+
+  &::after {
+    right: -23px;
+    transform: rotate(-60deg);
+  }
+}
+
+.request-list {
+  margin-bottom: 36px;
+
+  li {
+    + li {
+      margin-top: 17px;
+    }
+  }
+}
+
+.request-caution {
+  padding: 48px 0 32px;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+  background-color: $yellow;
+
+  li {
+    margin: 0 25px 19px;
+
+    + li {
+      border-top: 2px solid $yellow;
+    }
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    padding: 26px 0 13px;
+    font-weight: 700;
+
+    img {
+      flex: none;
+      width: 36.5px;
+      height: 36.5px;
+    }
+  }
+
+  .text {
+    width: 100%;
+    padding-left: 14px;
+  }
+
+  .btn01 {
+    margin-left: -10px;
+    margin-right: -10px;
+
+    ::v-deep .btn__text {
+      font-weight: bold;
+
+      @include breakpoint-down(tinyphone) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.request-inner {
+  padding-bottom: 1px;
+  margin-bottom: 24px;
+  background-color: $white;
+  border-radius: $radius;
+
+  @include breakpoint-down(tinyphone) {
+    font-size: 12px;
+  }
+
+  .text {
+    margin-bottom: 0;
+  }
+}
+
+// ------------------------- question
+section.question {
+  padding-bottom: 48px;
+  background-color: $gray-light;
+  color: $black;
+
+  .question-accordion {
+    > li {
+      background-color: $white;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+
+      + li {
+        margin-top: 16px;
+      }
+    }
+
+    .accordion-list {
+      li {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+
+        label {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.question-title {
+  padding: 30px;
+  font-size: 18px;
+  font-weight: $font-weight-medium;
+  text-align: center;
+}
+
+.question-text {
+  position: relative;
+  display: flex;
+  padding: 16px 52px 16px 16px;
+  font-size: 15px;
+  margin-bottom: 0;
+  font-weight: $font-weight-medium;
+
+  &::after {
+    @include centering(false, true);
+
+    right: 16px;
+    width: 16px;
+    height: 14px;
+    background-image: url('#{$img}/icon-arrow-down.svg');
+    background-size: cover;
+    content: '';
+    transition: 0.5s;
+  }
+
+  span {
+    padding-right: 4px;
+    font-weight: 700;
+    min-width: 21px;
+  }
+}
+
+.question-list {
+  line-height: 1.6;
+
+  .question-content {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+.question-content {
+  height: 0;
+}
+
+.question-answer {
+  display: flex;
+  padding: 12px 0;
+  font-size: 12px;
+  margin-bottom: 0;
+  font-weight: $font-weight-medium;
+
+  span {
+    padding-right: 4px;
+    margin-top: -2px;
+    font-size: 15px;
+    font-weight: 700;
+    min-width: 21px;
+  }
+}
+
+// ------------------------- agreement
+aside.agreement {
+  max-width: 375px;
+  padding: 0 $margin;
+  margin: 45px auto 44px;
+  box-sizing: border-box;
+
+  .note {
+    .num {
+      padding-right: 2px;
+    }
+  }
+}
+
+.agreement-title {
+  padding: 5px 0 7px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
+}
+
+.agreement-inner {
+  padding: 23px 0 32px;
+
+  + .agreement-inner {
+    border-top: 1px solid $black;
+    padding-bottom: 0;
+  }
+
+  + .agreement-title {
+    margin-top: -9px;
+  }
+}
+
+.agreement-top {
+  margin: 0 $margin;
+
+  .text {
+    font-size: 10px;
+    line-height: 14.48px;
+    padding: 0 1.5px;
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 8.5px;
+    }
+  }
+}
+
+.agreement-links {
+  margin-bottom: 15px;
+}
+
+.agreement-link {
+  margin-bottom: 7px;
+  font-size: 12px;
+  text-align: center;
+  font-weight: $font-weight-medium;
+  color: $black;
+
+  img {
+    width: auto;
+    vertical-align: middle;
+  }
+
+  a {
+    text-decoration: underline;
+    vertical-align: middle;
+  }
+
+  .link-pdf {
+    display: inline-block;
+    text-decoration: underline;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover {
+      color: $green;
+      text-decoration: underline;
+    }
+  }
+}
+
+.agreement-list {
+  margin: 0 $margin;
+  font-size: 12px;
+
+  @include breakpoint-down(smallnormal) {
+    margin: 0 18px;
+    font-size: 11px;
+    text-align: justify;
+  }
+
+  @include breakpoint-down(tinyphone) {
+    font-size: 10px;
+    font-weight: $font-weight-medium;
+  }
+
+  li {
+    margin-bottom: 33px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    text-decoration: underline;
+
+    &::after {
+      @include centering(false, true);
+
+      right: -17px;
+      width: 13px;
+      height: 10px;
+      background-image: url('#{$img}/icon-arrow-down.svg');
+      background-size: cover;
+      content: '';
+      transform: translateY(-50%) rotate(-90deg);
+      transition: 0.5s;
+    }
+  }
+
+  .title {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .text {
+    margin-bottom: 4px;
+    color: $black;
+  }
+}
+
+.agreement-bottom {
+  margin: 20px auto 0;
+  font-size: 10px;
+  text-align: right;
+  max-width: 306px;
+
+  &.mt-15 {
+    margin-top: 15px;
+  }
+
+  .name {
+    display: inline-block;
+    padding: 5px 16px;
+    margin-bottom: 12px;
+    border: 1px solid $black;
+  }
+}
+
+.note-open {
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+
+  span {
+    text-decoration: underline;
+  }
+
+  &.open_1 {
+    margin-bottom: 30px;
+  }
+
+  &.open_2 {
+    margin-bottom: 24px;
+  }
+
+  &.open_6 {
+    padding-left: 3px;
+    padding-right: 3px;
+
+    .note {
+      color: $white;
+    }
+
+    .open-toggle {
+      color: $white;
+    }
+
+    .toggle-note {
+      background-color: rgba($white, 0.4);
+    }
+  }
+
+  .open-toggle {
+    color: $green;
+    font-weight: $font-weight-bold;
+    cursor: pointer;
+    // text-decoration: underline;
+  }
+
+  .toggle-note {
+    font-size: 12px;
+    color: $base-gray;
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid rgba($black, 0.15);
+    border-radius: 4px;
+    margin: 10px 12px;
+    line-height: 16px;
+  }
+}
+
+.after-no-2 {
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    content: '※2';
+    position: absolute;
+    top: -3px;
+    right: 0;
+    transform: translateX(120%);
+    font-size: 11px;
+    color: $white;
+    font-weight: normal;
+    font-family: 'Noto Sans JP';
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 9px;
+      top: -5px;
+    }
+  }
+}
+.pseudo-no-7 {
+  position: relative;
+
+  &:before {
+    content: '※7';
+    position: absolute;
+    top: -6px;
+    right: 50%;
+    transform: translateX(173%);
+    color: $white;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: 'Noto Sans JP';
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 9px;
+      top: -5px;
+    }
+  }
+
+  &:after {
+    content: '※7';
+    position: absolute;
+    top: 36px;
+    right: 26%;
+    font-size: 11px;
+    color: white;
+    font-weight: normal;
+    font-family: 'Noto Sans JP';
+
+    @include breakpoint-down(smallnormal) {
+      top: 32px;
+    }
+
+    @include breakpoint-down(tinyphone) {
+      font-size: 9px;
+      top: 33px;
+      right: 29%;
+    }
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// -------------------------footer
+footer {
+  &.footer {
+    max-width: 375px;
+    padding: 50px 24px 60px;
+    margin: 0 auto;
+    font-size: 12px;
+    color: $white;
+    text-align: center;
+    background-color: $green-dark;
+  }
+}
+
+.footer {
+  &-title {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: $font-weight-bold;
+  }
+
+  &-text {
+    line-height: 1.5;
+
+    li {
+      line-height: 17.38px;
+    }
+  }
+}
+
+.lh-19px {
+  line-height: 19px;
+}

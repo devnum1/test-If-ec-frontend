@@ -1,0 +1,44 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.contract {
+  &-info {
+    font-family: $font-family-primary;
+
+    .text-dark-gray {
+      color: rgba($black, 0.5);
+    }
+  }
+
+  &-card {
+    &-list {
+      &__item {
+        &::before {
+          content: '\2022';
+          font-weight: bold;
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          margin-right: 6px;
+          margin-left: -12px;
+        }
+      }
+    }
+  }
+}
+
+::v-deep {
+  label.text-black {
+    &-light {
+      span.input-checkbox__title {
+        color: #00000099 !important;
+      }
+    }
+    span.input-checkbox__title {
+      color: #000000d1 !important;
+    }
+  }
+  span.base-input__text {
+    min-width: fit-content;
+    color: #00000099;
+  }
+}

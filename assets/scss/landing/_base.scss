@@ -1,0 +1,78 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// @import "../../../shared/core/reset-html5doctor";
+// @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900");
+
+// ------------------------- variables
+$green-light: #b2d0cd;
+// $green: #44ABA6;
+$green-dark: #00655a;
+$orange: #f79c31;
+$yellow: #fcec62;
+$gray-light: #f7f7f7;
+$gray: #ededed;
+$gray-dark: #787878;
+$gray-bg: #d1d6da;
+$black: #000;
+$black-1: #333;
+$white: #fff;
+$green: #5fbbb5;
+$green-1: #4b9590;
+$green-2: #44aba6;
+$green-3: #55a8a3;
+
+$img: '~@/assets/images/landing';
+$margin: 15px;
+$margin-xl: 32px;
+$radius: 8px;
+
+$max-width: 375px;
+
+body {
+  font-family: $font-family-base;
+}
+// ------------------------- mixin
+@mixin centering($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+// ------------------------- base reset-html5doctorで足りなかったもの
+html {
+  font-size: 62.5%;
+  font-family: 'Hiragino Sans', 'Noto Sans JP';
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $black;
+
+  &:vitited {
+    color: $black;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  display: none;
+}

@@ -1,0 +1,104 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ======================================================
+// Components :: Date Picker
+// ======================================================
+
+.base-date-picker {
+  .multiselect {
+    border: 0;
+    color: $black-1;
+
+    &__tags {
+      font-size: $font-size-base + 2;
+      line-height: 1.5;
+      font-weight: $font-weight-medium;
+      border: 1px solid rgba($blue, 0.15);
+      background: rgba($white, 0.87);
+      border-radius: 8px;
+      overflow: hidden;
+      color: rgba($black, 0.82);
+      padding: 7px 40px 7px 8px;
+    }
+
+    &__single,
+    &__input,
+    &__placeholder {
+      background-color: transparent;
+      font-size: $font-size-base + 2;
+      font-weight: $font-weight-base;
+      padding-left: 4px;
+      padding-top: 8px;
+      line-height: 1.5;
+    }
+
+    &__input {
+      &::placeholder {
+        color: rgba($black, 0.15);
+      }
+    }
+
+    &__select {
+      height: 54px;
+      width: 50px;
+      padding-right: 0;
+      padding-left: 0;
+
+      &:before {
+        margin-top: 4px;
+        border-color: rgba($black, 0.6) transparent transparent;
+        border-width: 8px 5px 0;
+      }
+    }
+
+    &__option {
+      &--highlight {
+        background-color: $green;
+      }
+
+      &--selected {
+        color: $black-1;
+
+        &.multiselect__option--highlight {
+          color: $white;
+        }
+      }
+    }
+
+    &__content-wrapper {
+      overflow-x: auto;
+    }
+  }
+
+  .multiselect--active {
+    z-index: 1;
+  }
+
+  &--error {
+    .multiselect {
+      &__tags {
+        background-color: rgba($red, 0.13);
+        border-color: $red;
+        color: $red;
+      }
+    }
+  }
+
+  &__error {
+    color: $red;
+    font-size: $font-size-base;
+    line-height: 1.3;
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+.date-container {
+  &__error-text {
+    color: $red;
+    font-size: $font-size-base;
+    line-height: 1.3;
+    display: block;
+    margin-top: 8px;
+  }
+}

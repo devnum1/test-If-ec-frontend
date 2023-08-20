@@ -1,0 +1,56 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.contract {
+  &-info {
+    margin-top: 25px;
+    font-family: $font-family-primary;
+
+    .text-dark-gray {
+      color: rgba($black, 0.5);
+    }
+  }
+
+  &-card {
+    &-list {
+      &__item {
+        &::before {
+          content: '\2022';
+          font-weight: bold;
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          margin-right: 6px;
+          margin-left: -12px;
+        }
+      }
+    }
+  }
+}
+
+.complete-check {
+  margin-top: 56px;
+
+  &__icon {
+    height: 32px;
+    width: 32px;
+    border-radius: $border-radius-circle;
+    font-size: $font-size-base;
+    color: $white;
+    margin: 0 auto;
+
+    .icon-fonts {
+      line-height: 33px;
+    }
+
+    &--warning {
+      background-image: url('~assets/images/icon-warning.svg');
+    }
+  }
+
+  &__text-warning {
+    color: $red;
+    line-height: 22.5px;
+    margin-top: 13px;
+    font-size: $font-size-base + 4;
+  }
+}

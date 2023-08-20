@@ -1,0 +1,201 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ======================================================
+//  Page: Dp 0015
+// ======================================================
+
+.illness-history {
+  margin-top: 40px;
+
+  &__highlight {
+    color: $green;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &__top {
+    color: rgba($black, 0.82);
+    margin-bottom: 19px;
+    text-align: center;
+  }
+
+  &__info {
+    margin-bottom: 32px;
+  }
+
+  &__button {
+    margin-top: 72px;
+    padding-bottom: 82px;
+  }
+
+  .custom-position-right {
+    position: relative;
+
+    .base-label__text {
+      font-size: $font-size-base;
+    }
+
+    .label-tooltip {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      @include breakpoint-down(tinyphone) {
+        position: relative;
+
+        .label-tooltip__main {
+          justify-content: flex-end;
+        }
+      }
+
+      .label-tooltip__main {
+        margin-bottom: 2px;
+      }
+    }
+  }
+
+  .mw-279 {
+    max-width: 279px;
+    margin: 0 auto;
+  }
+
+  > label.input-checkbox {
+    margin-left: 13px;
+  }
+}
+
+.pet-info {
+  margin-bottom: 40px;
+
+  &__wrapper {
+    background-color: $white;
+    border: 1px solid rgba($green-border, 0.15);
+    border-radius: 6px;
+  }
+
+  &__title {
+    font-size: $font-size-base;
+    line-height: 21px;
+    padding: 16.5px 10px;
+    text-align: center;
+    border: 1px dashed rgba($green-border, 0.15);
+    color: rgba($black, 0.6);
+  }
+
+  &__text {
+    color: $red;
+    font-size: 18px;
+    line-height: 23px;
+
+    @include breakpoint-down(tinyphone) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    padding: 13px 16px 9px 16px;
+    border-top: 1px solid rgba($green-border, 0.15);
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &-left {
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba($black, 0.6);
+    }
+
+    &-right {
+      color: rgba($black, 0.82);
+      font-family: $font-family-primary;
+      text-align: right;
+    }
+  }
+}
+
+.list-checkbox {
+  &__title {
+    position: relative;
+
+    span {
+      margin-left: 8px;
+    }
+
+    &-right {
+      position: absolute;
+      top: 5px;
+      left: calc(100% - 16px);
+      font-size: 12px;
+      cursor: pointer;
+      color: rgb($black, 0.82);
+      outline: none;
+    }
+
+    hr {
+      border: 0.5px solid rgba($black-7, 0.15);
+      margin: 23px 0 16px 0;
+    }
+  }
+
+  &__list {
+    display: block;
+
+    &-item {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.illness-history {
+  .input-checkbox__title {
+    color: rgba($black, 0.82);
+  }
+}
+
+.last-checkbox {
+  .input-checkbox__title {
+    color: rgb($black, 0.82);
+  }
+  margin-top: 33px;
+  padding-left: 13px;
+  margin-bottom: 64px;
+  &-notice {
+    margin-top: 15px;
+    margin-left: 39px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .input-checkbox {
+    padding-left: 39px;
+  }
+}
+
+.label-red {
+  margin-bottom: 23px;
+
+  .base-label__text {
+    color: $red;
+    font-size: $font-size-base;
+  }
+
+  .mb-0 {
+    .base-label__main {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.insStartDateInform {
+  padding-top: 13px;
+  &__text {
+    color: $red;
+    font-size: $font-size-base;
+  }
+}

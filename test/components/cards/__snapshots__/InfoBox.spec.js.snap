@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoBox match Snapshot 1`] = `
+"<div class=\\"info-box\\">
+  <ul class=\\"info-box__list\\">
+    <li class=\\"info-box__item\\">
+      <div class=\\"info-box__title text-\\">
+        誕生日
+      </div>
+      <div class=\\"info-box__text text-right text-darker\\"><span>1990/07/25</span>
+        <!---->
+      </div>
+    </li>
+    <li class=\\"info-box__item\\">
+      <div class=\\"info-box__title text-\\">
+        性別
+      </div>
+      <div class=\\"info-box__text text-right text-darker\\"><span>女</span>
+        <!---->
+      </div>
+    </li>
+    <li class=\\"info-box__item\\">
+      <div class=\\"info-box__title text-\\">
+        郵便番号
+      </div>
+      <div class=\\"info-box__text text-right text-darker\\"><span>150-0046</span>
+        <!---->
+      </div>
+    </li>
+    <li class=\\"info-box__item\\">
+      <div class=\\"info-box__title text-\\">
+        電話番号
+      </div>
+      <div class=\\"info-box__text text-right text-darker\\"><span>08012345678</span>
+        <!---->
+      </div>
+    </li>
+    <li class=\\"info-box__item\\">
+      <div class=\\"info-box__title text-\\">
+        連絡用メールアドレス
+      </div>
+      <div class=\\"info-box__text text-right text-darker\\"><span>y.hanako12@peco-japan.com</span>
+        <!---->
+      </div>
+    </li>
+    <li class=\\"info-box__item\\">
+      <div class=\\"info-box__title text-\\">
+        PECOからのお知らせ
+      </div>
+      <div class=\\"info-box__text text-right text-darker\\"><span>受け取る</span>
+        <!---->
+      </div>
+    </li>
+  </ul>
+</div>"
+`;

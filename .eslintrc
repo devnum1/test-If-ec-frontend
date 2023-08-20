@@ -1,0 +1,19 @@
+{
+  "extends": ["plugin:vue/recommended", "prettier"],
+  "ignorePatterns": ["dist/*"],
+  "overrides": [
+    {
+      "files": ["*.vue", "*.js"],
+      "rules": {
+        "indent": "off",
+        "vue/html-indent": "off",
+        "vue/max-attributes-per-line": [
+          "warn",
+          {
+            "singleline": 3
+          }
+        ]
+      }
+    }
+  ]
+}

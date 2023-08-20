@@ -1,0 +1,49 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Deploy lf-ec-front to Stg S3 on main merge
+
+on:
+  push:
+    branches: ['main']
+
+env:
+  S3_BUCKET: s3://stg-az-bw-spa-front-app
+  AWS_REGION: 'ap-northeast-1'
+  AWS_DEFAULT_OUTPUT: json
+  AWS_ACCOUNT_ID: 639040246290
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+      - run: yarn install
+      - run: yarn build:stg
+
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: ap-northeast-1
+          role-to-assume: arn:aws:iam::639040246290:role/github-oidc-lf-ec-frontend-Role-K03D9EF7XB1S
+          role-session-name: GitHubDeployActions
+
+      - name: Publish to AWS S3 & CloudFront Cache Clear
+        uses: opspresso/action-s3-sync@v0.2.3
+        env:
+          FROM_PATH: './dist'
+          DEST_PATH: ${{ env.S3_BUCKET }}
+          CF_RESET: false

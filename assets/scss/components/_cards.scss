@@ -1,0 +1,217 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.pet-id-card {
+  border: 1px solid rgba($black, 0.15);
+  border-radius: 6px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 4px 0px 0px rgba($black, 0.15);
+  margin-bottom: 10px;
+
+  .id-card {
+    &__pet-info-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      align-items: center;
+
+      .pet-image-container {
+        padding: 4px;
+        border-radius: 8px;
+        display: grid;
+        align-items: center;
+        max-height: 150px;
+        overflow: hidden;
+
+        @include breakpoint-down(smallphone) {
+          max-height: 130px;
+        }
+
+        .pet-image {
+          border-radius: 8px;
+          overflow: hidden;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+      .no-image-container {
+        padding: 4px;
+        border-radius: 8px;
+        display: grid;
+        align-items: center;
+        background-color: rgba($black, 0.04);
+        height: 100%;
+
+        @include breakpoint-down(smallphone) {
+          height: 130px;
+        }
+
+        .no-image {
+          margin: 0 auto;
+          width: 50%;
+          filter: invert(0.8);
+        }
+
+        .cat-invert {
+          filter: invert(0.6);
+        }
+      }
+
+      .icon-fonts {
+        color: $green;
+      }
+
+      .pet-info {
+        &-grid {
+          padding-left: 6px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .info-row {
+            display: flex;
+            color: rgba($black, 0.6);
+            font-size: 12px;
+            text-align: left;
+
+            > div {
+              &:last-child {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+              }
+            }
+
+            .card-icon {
+              margin-right: 6px;
+              font-size: 14px;
+            }
+
+            &:not(:first-child) {
+              padding-top: 4px;
+            }
+
+            &:not(:last-child) {
+              padding-bottom: 4px;
+            }
+
+            .card-logo {
+              width: 79px;
+              margin-bottom: 1px;
+            }
+
+            .btn-logo {
+              width: 88px;
+              height: 22px;
+              font-size: 12px;
+              color: $white;
+              background-color: $red;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+
+    &-container {
+      position: relative;
+      padding: 8px;
+
+      .peco-title {
+        position: absolute;
+        background-color: rgba($black, 0.15);
+        margin: 0 auto;
+        width: auto;
+        left: 25px;
+        top: 0;
+        padding: 3px 12px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 10px;
+        color: rgba($black, 0.6);
+
+        @include breakpoint-down(smallphone) {
+          left: 11px;
+        }
+      }
+
+      .id-edit {
+        text-align: right;
+        min-height: 24px;
+
+        &__button {
+          display: inline-block;
+          background-color: white;
+          border: 1px solid rgba($green-border, 0.15);
+          box-shadow: none;
+          color: $green;
+          border-radius: 40px;
+          padding: 3px 12px;
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+
+      .pet-name {
+        font-size: 16px;
+        padding-left: 8px;
+        padding-right: 8px;
+
+        .pet-gender {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.insurance-payment-card {
+  border: 1px solid rgba($green-border, 0.15);
+  border-radius: 6px;
+  text-align: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: white;
+
+  .insurance-head {
+    &__inner {
+      padding-top: 22px;
+      padding-bottom: 13px;
+      font-size: 14px;
+      line-height: 30px;
+      color: $green;
+    }
+  }
+
+  .insurance-body {
+    &__inner {
+      font-size: 14px;
+      padding-bottom: 33px;
+
+      div {
+        display: inline-block;
+      }
+
+      &-input {
+        border-bottom: 4px solid rgba($green-border, 0.15);
+        width: 110px;
+
+        input {
+          border: none;
+          box-shadow: none;
+          width: 90px;
+          text-align: center;
+          line-height: 21px;
+          font-size: 20px;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+  }
+}
+
+.mt-26 {
+  margin-top: 26px;
+}

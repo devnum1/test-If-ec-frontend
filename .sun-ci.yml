@@ -1,0 +1,12 @@
+stages:
+  - test
+
+jobs:
+  build:
+    stage: test
+    image: node:12-alpine
+    script:
+      - yarn install
+      - yarn run eslint .
+      - yarn test
+      - yarn build

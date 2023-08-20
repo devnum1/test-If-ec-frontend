@@ -1,0 +1,96 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ======================================================
+// Abstracts :: Variables
+// ======================================================
+
+// Color
+$white: #fff;
+$white-1: #f2f2f2;
+$white-2: #f5f5f5;
+
+$black: #000;
+$base-black: #323333;
+$black-1: #333333;
+$black-2: #707070;
+$black-3: #8b8b8b;
+$black-4: #5a5a5a;
+$black-5: #363636;
+$black-6: #323333;
+$black-7: #0a0a0a;
+$black-border: #0a0a0a;
+
+$brown: #c4c4c4;
+
+$blue: #445f79;
+$blue-1: #62b7bf;
+
+$red: #e0705a;
+$green: #5fbbb5;
+$green-1: #4b9590;
+$green-2: #44aba6;
+$green-dark: #00655a;
+$green-border: #62b7bf;
+
+$orange: #ffa43a;
+$orange-border: #f79e1b;
+$orange-shadow: #ee610e;
+
+$yellow: #fcec62;
+$yellow-light: #fefadd;
+
+$base-gray: #646665;
+$gray: #bbb;
+$gray-1: #b2b2b2;
+$gray-2: #e8e8e8;
+$gray-3: #fafafa;
+$gray-4: #e3f0f1;
+$gray-5: #0a0a0a;
+$gray-6: #f7f7f7;
+$gray-bg: #f7f7f7;
+
+// Paths
+$path-image: '../images';
+$path-fonts: '../fonts';
+
+// >> Font icon
+$font-family-icons: peticons, 'sans-serif';
+
+// Font-family
+$font-family-base: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ',
+  'ＭＳ Ｐゴシック', 'Lucida Grande', 'sans-serif';
+$font-family-primary: 'Noto Sans JP', sans-serif;
+$font-family-secondary: 'Roboto Condensed', sans-serif;
+// Font-size
+$font-size-small: 12px;
+$font-size-base: 14px;
+$font-size-medium: 16px;
+$font-size-big: 18px;
+
+// Font-weight
+$font-weight-light: 300;
+$font-weight-base: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Borders
+$border-radius-small: 2px;
+$border-radius-base: 4px;
+$border-radius-medium: 8px;
+$border-radius-large: 10px;
+$border-radius-circle: 50%;
+$border-radius-hack: 999px;
+
+//shadow
+$drop-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+$box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+// z-index
+$z-indexes: (
+  base: 1,
+  under: -1,
+  modal: 1001,
+  sidebar: 1000,
+);

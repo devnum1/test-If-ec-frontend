@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputImageClaimModal match Snapshot 1`] = `
+"<div class=\\"card-payment-instruc-modal\\">
+  <div class=\\"modal__overlay\\">
+    <div class=\\"modal__container\\">
+      <div class=\\"modal__close-button\\">
+        <div class=\\"icon-delete\\"></div>
+      </div>
+      <div class=\\"modal__body\\"><label class=\\"claim-form-image w-100\\">
+          <div>
+            <div class=\\"claim-form-image-input\\">
+              <div class=\\"input-icon\\"><i class=\\"icon-fonts icon-fonts--image\\"></i></div>
+              <div class=\\"input-text\\">
+                ライブラリから選択
+              </div>
+            </div>
+          </div> <input type=\\"file\\" class=\\"d-none\\">
+        </label>
+        <div class=\\"claim-form-instruc\\">
+          <div class=\\"notice\\">
+            <div class=\\"notice-icon\\">
+              <div>
+                !
+              </div>
+            </div>
+            <div class=\\"notice-text\\">
+              写真添付時のご注意
+            </div>
+          </div>
+          <div class=\\"claim-form-instruc--right\\">
+            <div class=\\"claim-form-instruc__item\\">
+              <div class=\\"image image--right\\"><img src=\\"~/assets/images/form-right.png\\"> <i class=\\"icon-fonts icon-fonts--circle\\"></i></div>
+              <div class=\\"instruc-text\\">
+                全部が綺麗に写っている
+              </div>
+            </div>
+          </div>
+          <div class=\\"claim-form-instruc--wrong\\">
+            <div class=\\"claim-form-instruc__item\\">
+              <div class=\\"image image--wrong\\"><img src=\\"~/assets/images/form-wrong-1.png\\"> <i class=\\"icon-fonts icon-fonts--close\\"></i></div>
+              <div class=\\"instruc-text\\">
+                見えない部分がある
+              </div>
+            </div>
+            <div class=\\"claim-form-instruc__item\\">
+              <div class=\\"image image--wrong\\"><img src=\\"~/assets/images/form-wrong-2.png\\"> <i class=\\"icon-fonts icon-fonts--close\\"></i></div>
+              <div class=\\"instruc-text\\">
+                全部写ってない
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

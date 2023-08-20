@@ -1,0 +1,113 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.category-row {
+  padding: 12px 0 12px 0;
+  border-bottom: 0.5px solid rgba($black-7, 0.15);
+
+  &__content {
+    width: 100%;
+    line-height: 24px;
+    color: rgba($black, 0.82);
+  }
+
+  &__icon-right {
+    background-image: url('~assets/images/icon-right.svg');
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+  }
+}
+
+.request-email {
+  padding: 24px 16px;
+  background-color: $white;
+  border-radius: 8px;
+  margin-top: 110px;
+
+  &__text {
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba($black, 0.6);
+  }
+}
+
+.question-row {
+  border-bottom: 0.5px solid rgba($black-7, 0.15);
+  padding: 12px 0 12px 0;
+
+  &__icon-union {
+    font-size: 12px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon-question {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 21px;
+    width: 100%;
+    color: rgba($black, 0.6);
+
+    @include breakpoint-down(smallnormal) {
+      font-size: 13.5px;
+    }
+
+    &::before {
+      content: 'Q';
+      color: $green;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: $white;
+      border: 1px dashed rgba($green-border, 0.15);
+      display: inline-table;
+      margin-right: 10px;
+      padding: 3px 9px;
+      font-size: 16px;
+    }
+  }
+}
+
+.answer {
+  display: flex;
+
+  &__icon-answer {
+    width: 32px;
+    height: 32px;
+    border: 1px dashed rgba($red, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    color: $red;
+    background-color: $white;
+    flex: 0 0 32px;
+  }
+
+  &__icon-text {
+    position: relative;
+    top: -1px;
+  }
+
+  &__text {
+    background-color: $white;
+    color: rgba($black, 0.82);
+    padding: 17px 13px;
+    border-radius: 8px;
+
+    ::v-deep a {
+      font-size: 10px;
+    }
+    flex: 0 0 calc(100% - 42px);
+  }
+}
+
+.not-collapsed {
+  &::before {
+    content: '\e924';
+  }
+}

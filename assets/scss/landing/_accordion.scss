@@ -1,0 +1,93 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.accordion {
+  padding: 0;
+  margin: 0;
+
+  .accordion-list {
+    font-size: 0;
+  }
+  .accordion-content {
+    padding: 0;
+    overflow-y: hidden;
+    border-top: none;
+    transition: border-top 0.3s ease-out, padding-top 0.3s ease-out,
+      padding-bottom 0.3s ease-out;
+
+    a {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+}
+
+.accordion-input {
+  display: none;
+}
+
+$accordion-min: 1;
+$accordion-max: 6;
+
+@for $i from $accordion-min through $accordion-max {
+  #accordion#{$i}:checked,
+  #qa-accordion#{$i}:checked {
+    transform: translateY(-50%);
+
+    + label {
+      + .coverage-answer {
+        padding: 32px 25px;
+        margin-top: -1px;
+        font-size: 15px;
+        border: 2px solid $white;
+      }
+
+      // アイコンをドゥルルってする
+      .coverage-breed {
+        &::after {
+          transform: translateX(-50%) rotate(-180deg);
+          transition: 0.5s;
+        }
+      }
+    }
+
+    + label {
+      + .question-list {
+        transition: 0.5s;
+
+        .question-content {
+          border-top: 1px solid $black;
+          font-size: 15px;
+          padding: 12px 0;
+          height: auto;
+          margin: 16px;
+        }
+      }
+      // アイコンをドゥルルってする
+      .question-text {
+        &::after {
+          transform: translateY(-50%) rotate(-180deg);
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+
+  #accordion#{$i}:checked ~ #accordion-list#{$i},
+  #qa-accordion#{$i}:checked ~ #qa-accordion-list#{$i} {
+    border-top: none;
+    transition: border-top 0.3s ease-out, padding-top 0.3s ease-out,
+      padding-bottom 0.3s ease-out;
+
+    .accordion-content {
+      transition: border-top 0.3s ease-out, padding-top 0.3s ease-out,
+        padding-bottom 0.3s ease-out;
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  #accordion#{$i}:checked ~ #accordion-list#{$i} {
+    transform: translateY(-23px);
+  }
+}

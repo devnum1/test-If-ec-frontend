@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuggestMail match the snapshot 1`] = `
+"<div class=\\"email-dropdown\\" name=\\"test\\">
+  <div class=\\"email-dropdown__input\\">
+    <baseinput-stub value=\\"\\" name=\\"email\\" inputtype=\\"text\\" error=\\"\\" placeholder=\\"例 ) peco@hmail.com\\" inputclass=\\"\\" helptext=\\"\\" autocomplete=\\"email\\" mask=\\"\\" id=\\"\\" maxlength=\\"\\" min=\\"\\" aria-required=\\"true\\" aria-invalid=\\"false\\"></baseinput-stub>
+  </div>
+  <div class=\\"email-dropdown__container d-none\\">
+    <ul class=\\"email-dropdown__list\\">
+      <li tabindex=\\"-1\\" data-dropdown-item-index=\\"0\\" class=\\"email-dropdown__item\\"><span class=\\"email-dropdown__item-local-part\\"></span> <span class=\\"email-dropdown__item-domain\\">@gmail.com</span></li>
+      <li tabindex=\\"-1\\" data-dropdown-item-index=\\"1\\" class=\\"email-dropdown__item\\"><span class=\\"email-dropdown__item-local-part\\"></span> <span class=\\"email-dropdown__item-domain\\">@yahoo.co.jp</span></li>
+      <li tabindex=\\"-1\\" data-dropdown-item-index=\\"2\\" class=\\"email-dropdown__item\\"><span class=\\"email-dropdown__item-local-part\\"></span> <span class=\\"email-dropdown__item-domain\\">@outlook.com</span></li>
+      <li tabindex=\\"-1\\" data-dropdown-item-index=\\"3\\" class=\\"email-dropdown__item\\"><span class=\\"email-dropdown__item-local-part\\"></span> <span class=\\"email-dropdown__item-domain\\">@icloud.com</span></li>
+    </ul>
+  </div>
+</div>"
+`;

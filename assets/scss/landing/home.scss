@@ -1,0 +1,1514 @@
+@import 'base';
+
+.sp {
+  display: none;
+
+  @include breakpoint-down(smallphone) {
+    display: block;
+  }
+}
+
+.pc {
+  display: block;
+
+  @include breakpoint-down(smallphone) {
+    display: none;
+  }
+}
+
+.sp2 {
+  display: none;
+
+  @include breakpoint-down(phone) {
+    display: block !important;
+  }
+}
+
+.pc2 {
+  display: block;
+
+  @include breakpoint-down(phone) {
+    display: none !important;
+  }
+}
+
+.image-sp.sp2 {
+  display: none;
+
+  @include breakpoint-down(phone) {
+    display: block !important;
+    width: 100%;
+    max-width: 315px;
+    height: auto;
+    margin: 74px auto auto;
+  }
+}
+
+.homepage-container {
+  padding-top: 103px;
+  background-color: $gray-3;
+
+  @include breakpoint-down(phone) {
+    padding-top: 54px;
+  }
+}
+
+.menu {
+  &__info-label {
+    &.font-14px {
+      @include breakpoint-down(phone) {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.homepage-header {
+  position: fixed;
+  top: 0;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 5;
+  background-color: white;
+
+  .global-header {
+    background-color: $green;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    align-items: center;
+
+    @include breakpoint-down(phone) {
+      padding: 4px 20px 5px;
+      display: grid;
+      grid-template-columns: 44px auto auto;
+      justify-content: unset;
+    }
+
+    .logo {
+      a {
+        display: block;
+
+        img {
+          height: 40px;
+          width: auto;
+
+          @include breakpoint-down(phone) {
+            // width: 117px;
+          }
+        }
+      }
+
+      @include breakpoint-down(phone) {
+        margin-right: 30px;
+      }
+      @include breakpoint-down(tinyphone) {
+        margin-right: 0;
+      }
+    }
+
+    .global-nav {
+      @include breakpoint-down(phone) {
+        text-align: right;
+
+        a {
+          display: inline-flex;
+        }
+      }
+
+      .btn {
+        background-color: $white;
+        border-radius: 50px;
+        color: $green;
+        margin-left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        float: left;
+        padding: 3px 16px;
+        line-height: 2;
+
+        @include breakpoint-down(phone) {
+          flex-direction: column;
+          background-color: transparent;
+          color: white;
+          padding: 0;
+          font-size: 10px;
+          line-height: 1.2;
+        }
+
+        &:nth-child(1) {
+          @include breakpoint-down(phone) {
+            margin-left: unset;
+          }
+        }
+
+        &:nth-child(2) {
+          @include breakpoint-down(phone) {
+            float: right;
+            margin-left: 20px;
+          }
+        }
+
+        > div {
+          display: flex;
+          align-items: center;
+
+          @include breakpoint-down(phone) {
+            &:nth-child(1) {
+              height: 28px;
+            }
+
+            &:nth-child(2) {
+              line-height: 15px;
+            }
+          }
+        }
+
+        i {
+          margin: 0 4px;
+          font-size: 22px;
+
+          &.icon-fonts--mail {
+            font-size: 19px;
+          }
+
+          @include breakpoint-down(phone) {
+            &.icon-fonts--mail {
+              font-size: 24px;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navigation-container {
+    width: 568px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    padding: 9px 0px;
+    color: $green;
+    font-weight: bold;
+    font-size: 14px;
+
+    @include breakpoint-down(phone) {
+      display: none;
+    }
+
+    > li {
+      &:not(:first-child) {
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 1px;
+          height: 100%;
+          background-color: $green;
+        }
+      }
+
+      a:not(.link) {
+        color: $green;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+
+  .nav-icon {
+    display: none;
+
+    @include breakpoint-down(phone) {
+      display: block;
+      color: $white;
+      font-size: 24px;
+    }
+  }
+}
+
+.section-slider {
+  // background-color: $brown;
+  ::v-deep {
+    .slick-dots {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5px;
+
+      @include breakpoint-down(phone) {
+        margin-top: 17px;
+      }
+
+      li {
+        background-color: $gray;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        float: left;
+        box-shadow: unset;
+        border: none;
+        margin: 0 5px;
+
+        button {
+          display: none;
+        }
+
+        &.slick-active {
+          background-color: $green;
+        }
+      }
+    }
+
+    .slide-item {
+      padding: 0 !important;
+      display: block !important;
+    }
+
+    .slick-arrow {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      color: transparent;
+      width: 70px;
+      height: 80px;
+
+      &:focus {
+        outline: 0;
+        box-shadow: none;
+
+        &:after {
+          outline: 0;
+          box-shadow: none;
+        }
+      }
+
+      &.slick-prev {
+        background: transparent;
+        border: none;
+        box-shadow: unset;
+        left: 0;
+
+        &:after {
+          content: '';
+          position: absolute;
+          background: url('#{$img}/Vector 20.svg') no-repeat;
+          background-size: cover;
+          width: 20px;
+          height: 40px;
+          z-index: 1;
+          transform: rotate(180deg);
+          margin-left: -5px;
+          margin-top: -20px;
+
+          @include breakpoint-down(phone) {
+            height: 21px;
+            width: 11px;
+            margin-left: -10px;
+          }
+        }
+      }
+
+      &.slick-next {
+        background: transparent;
+        border: none;
+        box-shadow: unset;
+        right: 0;
+
+        &:after {
+          content: '';
+          position: absolute;
+          background: url('#{$img}/Vector 20.svg') no-repeat;
+          background-size: cover;
+          width: 20px;
+          height: 40px;
+          z-index: 1;
+          margin-left: -37px;
+          margin-top: -8px;
+
+          @include breakpoint-down(phone) {
+            height: 21px;
+            width: 11px;
+            margin-left: -13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.top .to-page-button-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 46px 26px 51px;
+  margin: 0 auto;
+  clear: both;
+
+  @include breakpoint-down(phone) {
+    flex-direction: column;
+    width: 100%;
+    padding: 33px 20px 82px;
+  }
+  .btn + .btn {
+    margin-left: 40px;
+    @include breakpoint-down(phone) {
+      margin-top: 20px;
+      margin-left: auto;
+    }
+  }
+  .icon-fonts--user-menu {
+    position: relative;
+    left: -7px;
+    @include breakpoint-down(phone) {
+      left: -7px;
+    }
+  }
+
+  &--second {
+    padding: 56px 20px 50px;
+    @include breakpoint-down(phone) {
+      padding-bottom: 60px;
+    }
+    .btn--green-outline {
+      padding: 12px 25px 12px 41px;
+
+      .btn__text--full {
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        @include breakpoint-down(phone) {
+          padding: 13px 0px;
+          padding: 0 0;
+          justify-content: center;
+        }
+      }
+      @include breakpoint-down(phone) {
+        padding: 13px 34px 14px 29px;
+        padding-left: 29px !important;
+      }
+      .icon-fonts--arrow-right {
+        position: relative;
+        left: 9px;
+        @include breakpoint-down(phone) {
+          left: 16px;
+        }
+      }
+    }
+    .btn + .btn {
+      margin-left: 12px;
+      @include breakpoint-down(phone) {
+        margin-left: auto;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &--third {
+    display: flex;
+  }
+}
+
+.top .btn {
+  width: auto;
+  height: auto;
+  border-radius: 50px;
+  padding: 12px 20px 12px 35px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  justify-content: space-between;
+
+  @include breakpoint-down(phone) {
+    width: 230px;
+    margin: 0 auto;
+
+    &:nth-child(2) {
+      padding-left: 25px;
+    }
+  }
+
+  i {
+    &:first-child {
+      font-size: 30px;
+    }
+
+    &:last-child {
+      font-size: 22px;
+    }
+  }
+
+  .btn__text {
+    text-align: left;
+    margin: 0 0px 0 6px;
+    padding-left: 0;
+    font-weight: bold;
+    width: 107px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+}
+
+.notice {
+  text-align: center;
+  padding: 102px 0px 99px;
+  width: 568px;
+  margin: 0 auto;
+
+  @include breakpoint-down(phone) {
+    width: 315px;
+    padding: 110px 0 105px;
+  }
+
+  @include breakpoint-down(tinyphone) {
+    width: 290px;
+  }
+
+  .title {
+    color: $base-gray;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    line-height: 1;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed $green;
+    text-align: left;
+
+    @include breakpoint-down(phone) {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__date {
+    min-width: 76px;
+    margin-right: 19px;
+    background-color: rgba($green, 0.2);
+    padding: 1px 8px;
+    color: $green-1;
+    font-size: 12px;
+  }
+
+  &__title {
+    font-size: 16px;
+
+    &-content {
+      text-decoration: underline;
+      color: $black-1;
+    }
+  }
+
+  &__label {
+    color: $green;
+    text-transform: uppercase;
+    margin-left: 15px;
+
+    @include breakpoint-down(phone) {
+      clear: both;
+      display: block;
+    }
+  }
+  .btn {
+    display: block;
+    margin: 50px auto 0;
+    width: 319px;
+    padding: 18px 20px 19px;
+    padding-left: 28px;
+    @include breakpoint-down(phone) {
+      width: 230px;
+      padding: 9px 20px 9px;
+
+      left: 56px;
+    }
+    .btn__text {
+      width: 100%;
+      margin-left: 13px;
+    }
+    .icon-fonts--arrow-right {
+      position: relative;
+      left: 59px;
+      @include breakpoint-down(phone) {
+        left: 16px;
+      }
+    }
+  }
+}
+
+.banner-intro {
+  width: 568px;
+  margin: 0 auto;
+
+  @include breakpoint-down(phone) {
+    width: 100%;
+    padding: 0 30px 52px;
+  }
+
+  .title {
+    line-height: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: $base-gray;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .banner-image {
+    &.-flex {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      margin-bottom: 72px;
+      padding: 8px 8px 8px 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      .banner-desc {
+        margin-top: 10px;
+        padding-left: 10px;
+        color: hsla(190, 5%, 47%, 1);
+        letter-spacing: 1.6px;
+        transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        @include breakpoint-down(phone) {
+          font-size: 16px;
+        }
+
+        @include breakpoint-down(tinyphone) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &.-aboutus {
+      position: relative;
+      margin: 72px auto;
+      background-color: #b38807;
+      border-radius: 10px;
+      .banner-desc {
+        margin-top: 10px;
+        transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .read-more {
+        margin-top: 36px;
+        padding-left: 0;
+        color: #fff;
+        transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        .arrow {
+          display: inline-block;
+          width: auto;
+          margin-left: 8px;
+          & path {
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          }
+        }
+      }
+      .bg {
+        transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+    }
+
+    .banner-content {
+      color: white;
+      font-size: 16px;
+
+      .go-page {
+        margin-top: 18px;
+
+        @include breakpoint-down(phone) {
+          margin-top: 0;
+          margin-right: 10px;
+        }
+
+        a {
+          color: $white;
+        }
+      }
+
+      i {
+        font-size: 22px;
+
+        @include breakpoint-down(phone) {
+          font-size: 12.2px;
+        }
+      }
+
+      &.right {
+        right: 40px;
+        width: 196px;
+
+        @include breakpoint-down(phone) {
+          width: 100%;
+          text-align: center;
+          left: 0;
+          right: 0;
+          padding-top: 23px;
+
+          i {
+            position: relative;
+            bottom: 10px;
+            margin-bottom: 0;
+          }
+        }
+
+        img {
+          @include breakpoint-down(phone) {
+            max-width: 128px;
+            height: auto;
+          }
+        }
+
+        i {
+          float: right;
+          margin-bottom: 10px;
+        }
+      }
+
+      &.left {
+        position: absolute;
+        top: 28px;
+        left: 40px;
+        text-align: left;
+
+        @include breakpoint-down(phone) {
+          left: 0;
+          right: 0;
+          text-align: center;
+
+          i {
+            float: right;
+          }
+        }
+      }
+
+      hr {
+        color: $white;
+        border-color: $white;
+        width: 30%;
+        margin: 20px 0;
+
+        @include breakpoint-down(phone) {
+          text-align: center;
+          margin: 14px auto 11px;
+          width: 52px;
+        }
+
+        @include breakpoint-down(tinyphone) {
+          margin: 16px auto 9px;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .title {
+        text-align: left;
+        font-size: 34px;
+        color: #fff;
+        font-weight: 300;
+        font-family: 'Roboto Condensed';
+        transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        @include breakpoint-down(phone) {
+          font-size: 42px;
+          line-height: 49px;
+        }
+
+        @include breakpoint-down(tinyphone) {
+          font-size: 35px;
+        }
+      }
+
+      &.-flex-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+.pointer:hover .banner-image.-flex,
+.pointer:focus .banner-image.-flex {
+  background-color: #1da23a;
+}
+.pointer:hover .banner-image.-flex .banner-desc,
+.pointer:focus .banner-image.-flex .banner-desc {
+  color: #fff;
+  transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.insurance-product-logo {
+  margin-top: 5px;
+}
+
+.product-lp-image {
+  outline: 1px solid #1da23a;
+  outline-offset: -1px;
+  border-radius: 15px;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  .pointer:hover & {
+    outline: 1px solid #fff;
+    filter: contrast(105%) brightness(107%);
+    transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+}
+
+.read-more {
+  margin-top: auto;
+  margin-bottom: 8px;
+  padding-left: 12px;
+  color: #1da23a;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  .pointer:hover &,
+  .pointer:focus & {
+    color: #fff;
+    transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+  .circle {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;
+    border-radius: 50%;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    .pointer:hover &,
+    .pointer:focus & {
+      transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+  }
+  .banner-intro .banner-image .banner-content & svg.external-link-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+  }
+  .pointer {
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    &:hover,
+    &:focus {
+      color: #fff;
+      transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+  }
+}
+
+.pointer:hover .-aboutus .title,
+.pointer:hover .-aboutus .banner-desc,
+.pointer:hover .-aboutus .read-more,
+.pointer:focus .-aboutus .title,
+.pointer:focus .-aboutus .banner-desc,
+.pointer:focus .-aboutus .read-more {
+  color: #ebdbb0;
+  transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+.pointer:hover .-aboutus .arrow path,
+.pointer:focus .-aboutus .arrow path {
+  fill: #ebdbb0;
+  transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+.pointer:hover .-aboutus .bg,
+.pointer:focus .-aboutus .bg {
+  opacity: 0.6;
+  transition: all 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.partner {
+  background: url('#{$img}/Group 972.png') no-repeat;
+  padding: 30px 10px 50px;
+  text-align: center;
+  background-size: cover;
+
+  @include breakpoint-down(phone) {
+    background-size: 100% 100%;
+    padding: 30px 10px 40px;
+  }
+
+  &-content {
+    width: 568px;
+    margin: 0 auto;
+
+    @include breakpoint-down(phone) {
+      width: 100%;
+    }
+
+    .title {
+      color: $base-gray;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 35px;
+    }
+
+    .brand-logo {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+      width: 315px;
+      margin: 32px auto auto;
+      justify-content: center;
+      align-items: center;
+
+      @include breakpoint-down(tinyphone) {
+        width: 290px;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+
+    hr {
+      border-color: $green-2;
+      margin: 32px auto;
+
+      @include breakpoint-down(phone) {
+        width: 315px;
+      }
+    }
+
+    .service-logo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 39px;
+      padding: 0 20px;
+      justify-content: center;
+      align-items: center;
+
+      @include breakpoint-down(phone) {
+        width: 150px;
+        margin: 0 auto;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0;
+      }
+    }
+  }
+}
+
+// 商品情報
+.product {
+  background: $white;
+  text-align: center;
+  padding: 32px 0px 0px;
+  @include breakpoint-down(phone) {
+    padding: 76px 0px 0px;
+  }
+  &_title {
+    font-weight: bold;
+    font-size: 36px;
+    color: $green-1;
+    margin-bottom: 0;
+    &--memo {
+      font-size: 22px;
+      position: relative;
+      top: -14px;
+      @include breakpoint-down(phone) {
+        font-size: 22px;
+        top: -12px;
+      }
+    }
+    @include breakpoint-down(phone) {
+      line-height: 1.4;
+    }
+  }
+}
+.product-top {
+  text-align: center;
+  padding-bottom: 60px;
+  width: 568px;
+  margin: 0 auto;
+  @include breakpoint-down(phone) {
+    width: 100%;
+    padding: 0px 20px 74px;
+  }
+  &_title {
+    line-height: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: $base-gray;
+  }
+  &_logo {
+    margin-top: 16px;
+    margin-bottom: 0;
+    @include breakpoint-down(phone) {
+      margin-top: 0px;
+      margin-bottom: 0;
+    }
+  }
+  &_sub-title {
+    font-size: 20px;
+    color: #737d80;
+    font-weight: bold;
+    margin-top: 5px;
+    @include breakpoint-down(phone) {
+      font-size: 16px;
+      margin-top: -12px;
+    }
+  }
+  &_list {
+    margin: 34px auto 0;
+    padding-left: 27px;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-down(phone) {
+      padding: 0 14px;
+      width: 100%;
+      margin-top: 30px;
+    }
+    & + .note {
+      margin-top: 20px;
+    }
+  }
+  &_item {
+    display: flex;
+    align-items: center;
+    &::before {
+      content: '';
+      background-image: url('~assets/images/home-page/icon-check.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      margin-right: 24px;
+      @include breakpoint-down(phone) {
+        margin-right: 12px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+    & + .product-top_item {
+      margin-top: 32px;
+      @include breakpoint-down(phone) {
+        margin-top: 17px;
+      }
+    }
+    &-text {
+      font-size: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0;
+      @include breakpoint-down(phone) {
+        font-size: 16px;
+      }
+      &--emphasis {
+        color: $red;
+        font-weight: bold;
+        @include breakpoint-down(phone) {
+          font-size: 22px;
+        }
+      }
+      &--memo {
+        font-size: 16px;
+        position: relative;
+        top: -10px;
+        margin-right: 8px;
+        @include breakpoint-down(phone) {
+          font-size: 8px;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+}
+.product-price {
+  background: $gray-3;
+  text-align: center;
+  padding: 60px 100px 0;
+  text-align: center;
+  @include breakpoint-down(phone) {
+    padding: 43px 20px 0;
+  }
+
+  &_title-desc {
+    margin-top: 14px;
+    font-size: 14px;
+    color: $black-1;
+    @include breakpoint-down(phone) {
+      margin-top: 24px;
+      line-height: 1.5;
+    }
+    &--memo {
+      font-size: 10px;
+      position: relative;
+      top: -4px;
+    }
+  }
+  &_price-table {
+    width: 488px;
+    margin: 20px auto 0;
+    @include breakpoint-down(phone) {
+      margin-top: 8px;
+      width: 100%;
+    }
+    & + .note {
+      margin-top: 14px;
+    }
+  }
+}
+
+.product-plan {
+  background: $gray-3;
+  text-align: center;
+  padding: 68px 100px 0;
+  text-align: center;
+  @include breakpoint-down(phone) {
+    padding: 72px 20px 0;
+  }
+
+  &_sub-title + &_title {
+    margin-top: 4px;
+  }
+  &_sub-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: $green-1;
+    margin-bottom: 0;
+  }
+
+  &_img-list {
+    width: 568px;
+    margin: 52px auto 0;
+    display: flex;
+    @include breakpoint-down(phone) {
+      width: 100%;
+      flex-direction: column;
+      margin-top: 22px;
+    }
+  }
+  &_img-item {
+    width: 271px;
+    @include breakpoint-down(phone) {
+      width: 100%;
+    }
+    & + & {
+      margin-left: 24px;
+      @include breakpoint-down(phone) {
+        margin-left: 0px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.product-compensation {
+  background: $gray-3;
+  text-align: center;
+  padding: 66px 100px 0;
+  text-align: center;
+  @include breakpoint-down(phone) {
+    padding: 42px 20px 0;
+  }
+  &_sub-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: $black-1;
+    margin-top: 18px;
+    margin-bottom: 0;
+
+    @include breakpoint-down(phone) {
+      font-size: 24px;
+      margin-top: 24px;
+    }
+    &-box {
+      margin-top: 24px;
+    }
+    &--strong {
+      color: $green;
+    }
+    &--memo {
+      letter-spacing: 0px;
+      display: block;
+      font-size: 16px;
+      margin-top: -4px;
+      @include breakpoint-down(phone) {
+        font-size: 12px;
+      }
+    }
+  }
+  &_list {
+    width: 568px;
+    margin: 24px auto 0;
+    display: flex;
+    @include breakpoint-down(phone) {
+      width: 100%;
+      margin-top: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &_item {
+    width: 186px;
+    @include breakpoint-down(phone) {
+      width: calc(50% - 6px);
+    }
+    & + & {
+      margin-left: 7px;
+      @include breakpoint-down(phone) {
+        margin-left: 9px;
+        margin-top: 0px;
+      }
+    }
+  }
+  &_desc {
+    font-size: 16px;
+    color: $black-1;
+    margin-bottom: 0;
+    line-height: 1.38;
+    &-box {
+      margin-top: 24px;
+      @include breakpoint-down(phone) {
+        margin-top: 56px;
+      }
+    }
+    &--strong {
+      font-size: 22px;
+      color: $green;
+    }
+    &--memo {
+      font-size: 12px;
+      position: relative;
+      font-weight: bold;
+      &--g {
+        color: $green;
+      }
+      top: -10px;
+    }
+  }
+}
+.note {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #716f6f;
+  &_item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & + & {
+      margin-top: 0px;
+    }
+    &--center {
+      justify-content: center;
+    }
+  }
+  &_notice-text {
+    display: flex;
+    align-items: baseline;
+    @include breakpoint-down(phone) {
+      line-height: 1.3;
+    }
+
+    &-close {
+      display: block;
+      padding: 8px 0;
+      @include breakpoint-down(phone) {
+        padding: 14px 0 12px;
+      }
+    }
+    &-notice {
+      margin-right: 8px;
+      white-space: nowrap;
+      text-decoration: none !important;
+    }
+    &-underline {
+      text-decoration: underline;
+    }
+  }
+  .open-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #716f6f;
+  }
+  .close-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: $green;
+  }
+}
+.toggle-note {
+  font-size: 12px;
+  color: $base-gray;
+  padding: 10px 30px;
+  text-align: justify;
+  border: 1px solid rgba($black, 0.15);
+  line-height: 1.3;
+  border-radius: 4px;
+  margin: 10px 0 0;
+  line-height: 16px;
+  @include breakpoint-down(phone) {
+    padding: 10px;
+    margin: 10px;
+    margin-top: 8px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.home-button {
+  color: $white;
+  z-index: 3;
+
+  &:active {
+    top: unset;
+  }
+}
+
+footer {
+  margin: 0 auto;
+  font-size: 12px;
+  color: $white;
+  text-align: center;
+
+  .footer-container {
+    padding: 40px 100px 34px;
+    background-color: $green-dark;
+
+    @include breakpoint-down(phone) {
+      width: 100%;
+      padding: 40px;
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+
+    .direct-list {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+
+      .direct-item {
+        display: flex;
+        text-align: left;
+
+        @include breakpoint-down(phone) {
+          flex-direction: column;
+          margin-bottom: 0;
+        }
+
+        .title {
+          width: 100%;
+          max-width: 164px;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 0;
+        }
+
+        a {
+          display: inline-block;
+          width: 100%;
+          color: $white;
+          line-height: 19px;
+          font-size: 13px;
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          @include breakpoint-down(phone) {
+            flex-direction: column;
+          }
+        }
+
+        li {
+          line-height: 19px;
+          font-size: 13px;
+          cursor: pointer;
+
+          @include breakpoint-up(phone) {
+            width: 50%;
+          }
+          @include breakpoint-down(phone) {
+            &:not(.footer-list-irregular) {
+              margin-top: 12px;
+            }
+          }
+          @include breakpoint-up(phone) {
+            &:nth-of-type(odd) {
+              padding-right: 15px;
+            }
+            &:nth-of-type(even) {
+              padding-left: 15px;
+            }
+            &:nth-of-type(n + 3) {
+              margin-top: 10px;
+            }
+          }
+        }
+
+        .footer-list-irregular {
+          margin-top: 0;
+          margin-bottom: 0;
+          @include breakpoint-up(phone) {
+            justify-content: flex-end;
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    hr {
+      height: 1px;
+      margin: 50px 0;
+      background-image: linear-gradient(
+        to right,
+        #fff,
+        #fff 2px,
+        transparent 1px,
+        transparent 1px
+      );
+      background-position: left bottom;
+      background-size: 4px 1px;
+      border: none;
+    }
+  }
+
+  .footer-logo-container {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    @include breakpoint-up(phone) {
+      justify-content: space-evenly;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+    @include breakpoint-down(phone) {
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 17px;
+      padding-bottom: 23px;
+    }
+
+    .logo {
+      img {
+        @include breakpoint-up(phone) {
+          width: 214px;
+        }
+        @include breakpoint-down(phone) {
+          width: 266px;
+        }
+      }
+    }
+
+    .document {
+      @include breakpoint-down(phone) {
+        margin-top: 3px;
+      }
+      p {
+        margin-bottom: 0;
+        text-align: right;
+        font-size: 12px;
+        line-height: 17.38px;
+        color: hsla(150, 1%, 40%, 1);
+
+        &:last-of-type {
+          font-size: 11px;
+          @include breakpoint-down(smallnormal) {
+            font-size: 10px;
+          }
+        }
+        @include breakpoint-down(phone) {
+          &:nth-of-type(2) {
+            margin-top: 5px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .footer-copyright {
+    padding: {
+      top: 16px;
+      bottom: 16px;
+    }
+    background-color: $green-dark;
+    .text {
+      margin-bottom: 0;
+      text-align: center;
+      padding: {
+        right: 20px;
+        left: 20px;
+      }
+      & > small {
+        line-height: 15.93px;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+#toTopBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  color: $white;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  opacity: 1;
+  box-shadow: 0 2px 0 $green-1;
+
+  i.icon-fonts--back {
+    transform: rotate(90deg);
+    font-size: 24px;
+  }
+
+  .btn__text {
+    font-size: 10px;
+    margin-top: 3px;
+  }
+}
+
+.fade-btn {
+  opacity: 0 !important;
+}
+
+.order {
+  &-1-sp {
+    @include breakpoint-down(phone) {
+      display: flex;
+      order: 1;
+    }
+  }
+  &-2-sp {
+    @include breakpoint-down(phone) {
+      display: flex;
+      order: 2;
+    }
+  }
+}

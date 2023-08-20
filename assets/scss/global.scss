@@ -1,0 +1,391 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// We architecting this project follow as the "7-1 Pattern" (7 folders, 1 file)
+// For more detail about this pattern
+// (https://sass-guidelin.es/#the-7-1-pattern)
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/common';
+@import 'components/icons';
+
+body {
+  font-size: $font-size-base + 2;
+  font-family: $font-family-base;
+  color: $black-1;
+  font-weight: $font-weight-base;
+  word-break: break-word;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: $gray-3;
+}
+
+@supports (-ms-ime-align: auto) {
+  body {
+    word-break: break-all;
+  }
+}
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  transition: all 0.2s ease;
+  color: $green;
+
+  &:hover {
+    outline: 0;
+    box-shadow: none;
+    text-decoration: none;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  word-break: keep-all;
+  appearance: none;
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+}
+
+.mw-100 {
+  min-width: 100px;
+}
+
+.mw-114 {
+  min-width: 114px;
+}
+
+.mw-156 {
+  min-width: 156px;
+}
+
+.mw-219 {
+  min-width: 219px;
+}
+
+.row-sp {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -4px;
+  margin-left: -4px;
+}
+
+.col-sp {
+  padding: 0 4px;
+  &--flex {
+    display: flex;
+  }
+}
+
+.col-sp-5 {
+  padding: 0 4px;
+  flex: 0 0 calc(100% * 5 / 12);
+}
+
+.col-sp-6 {
+  padding: 0 4px;
+  flex: 0 0 50%;
+}
+
+.col-sp-7 {
+  padding: 0 4px;
+  flex: 0 0 calc(100% * 7 / 12);
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-28 {
+  margin-bottom: 28px;
+}
+
+.mb-34 {
+  margin-bottom: 34px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-41 {
+  margin-bottom: 41px;
+}
+
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+.mb-56 {
+  margin-bottom: 48px;
+}
+
+.mb-57 {
+  margin-bottom: 57px;
+}
+
+.mb-21,
+.m-21 {
+  margin-bottom: 21px;
+}
+
+.mt-21,
+.m-21 {
+  margin-top: 21px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mt-26 {
+  margin-top: 26px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+
+.mt-36 {
+  margin-top: 36px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-56 {
+  margin-top: 56px;
+}
+
+.pb-44 {
+  padding-bottom: 44px;
+}
+
+.pb-72 {
+  padding-bottom: 72px;
+}
+
+.pb-35 {
+  padding-bottom: 35px;
+}
+
+.bg-gray {
+  background-color: $gray-3;
+  min-height: 100vh;
+}
+
+.text-color-default {
+  color: rgba($black, 0.6);
+}
+
+.text-default {
+  color: rgba($black, 0.6);
+  font-size: $font-size-base;
+  line-height: 21px;
+  margin-bottom: 0;
+}
+
+.text-black {
+  color: $black !important;
+}
+
+.text-green {
+  color: $green;
+  font-size: $font-size-base;
+
+  &:hover,
+  &:active {
+    color: darken($color: $green, $amount: 10);
+  }
+}
+
+.text-darker {
+  color: rgba($black, 0.82);
+  font-size: $font-size-base + 2;
+  line-height: 24px;
+}
+
+.text-gray {
+  color: rgb(123, 123, 123);
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.rules-title {
+  line-height: 1.25;
+  font-size: $font-size-base + 4;
+  display: flex;
+  align-items: center;
+  color: rgba($black, 0.82);
+  margin-bottom: 23px;
+
+  &:before {
+    content: '';
+    height: 24px;
+    width: 4px;
+    background-color: $green;
+    border-radius: 7px;
+    margin-right: 8px;
+    display: inline-block;
+  }
+}
+
+// Custom CSS Global
+
+$font-weight: 300, 400, 500, 600, 700, bold;
+@each $value in $font-weight {
+  .font-weight-#{$value} {
+    font-weight: $value;
+  }
+}
+
+$font-size: 10px, 12px, 13px, 14px, 16px, 18px, 20px, 22px, 24px, 28px, 32px,
+  36px;
+@each $value in $font-size {
+  .font-#{$value} {
+    font-size: $value;
+  }
+}
+
+$texts: (
+  'white': #fff,
+  'black': #000,
+  'black-4': #5a5a5a,
+  'black-5': #363636,
+  'black-6': #323333,
+  'black-7': #0a0a0a,
+  'red': #e0705a,
+  'green': #5fbbb5,
+  'blue': #445f79,
+  'gray': #bbb,
+  'black-0-6': rgba($black, 0.6),
+  'black-0-5': rgba($black, 0.5),
+  'black-0-82': rgba($black, 0.82),
+);
+@each $keys, $value in $texts {
+  .txt-#{$keys} {
+    color: $value;
+  }
+}
+
+$spacer: 20px;
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25,
+  ),
+  // 20 * 0.25 = 5
+  2:
+    (
+      $spacer * 0.5,
+    ),
+  3: $spacer,
+  4: (
+    $spacer * 1.5,
+  ),
+  5: (
+    $spacer * 3,
+  ),
+);
+@each $key, $value in $spacers {
+  .m-#{$key} {
+    margin: $value;
+  }
+  .p-#{$key} {
+    padding: $value;
+  }
+  .mx-#{$key} {
+    margin-right: $value;
+    margin-left: $value;
+  }
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+  .px-#{$key} {
+    padding-right: $value;
+    padding-left: $value;
+  }
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+  .pr-#{key} {
+    padding-right: $value;
+  }
+  .pl-#{key} {
+    padding-left: $value;
+  }
+  .pt-#{key} {
+    padding-top: $value;
+  }
+  .pb-#{key} {
+    padding-bottom: $value;
+  }
+}
+
+.container {
+  max-width: 375px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bg-gray-3 {
+  background-color: $gray-3;
+}
+
+.multiselect__option {
+  padding: 0;
+
+  .tracking {
+    display: block;
+    padding: 12px;
+  }
+}

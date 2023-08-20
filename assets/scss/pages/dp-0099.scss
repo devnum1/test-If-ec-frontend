@@ -1,0 +1,163 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.input-image {
+  width: 231px;
+  border: 1px dashed $green;
+  border-radius: 8px;
+  background-color: $white;
+  padding: 38px 20px 23px 20px;
+  font-size: 10px;
+  color: $green;
+  cursor: pointer;
+
+  input[type='file'] {
+    display: none;
+  }
+
+  .icon-fonts {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.page-button {
+  input[type='file'] {
+    display: none;
+  }
+}
+
+#preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    width: 162px;
+    margin-bottom: 16px;
+  }
+}
+
+.example-sussec-image {
+  background-color: $white;
+  padding: 12px 9px;
+  border-radius: 8px;
+
+  .example-item {
+    position: relative;
+    margin-right: 11px;
+
+    img {
+      width: 100%;
+      border: 1px solid rgba($black, 0.15);
+    }
+
+    &__content {
+      font-size: 12px;
+      line-height: 150%;
+      margin-bottom: 0;
+      color: rgba($black, 0.6);
+    }
+  }
+}
+
+.example-fail-image {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 14px;
+  grid-row-gap: 6px;
+  background-color: $white;
+  padding: 12px 9px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: rgba($black, 0.6);
+
+  .example-item {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    &__content {
+      color: rgba($black, 0.6);
+      font-size: 12px;
+      line-height: 150%;
+      margin-bottom: 0;
+    }
+  }
+
+  .icon-fonts {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba($black, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+}
+
+.radio-item {
+  ::v-deep label {
+    &.input-radio {
+      margin-right: 8px;
+    }
+  }
+}
+
+.button-green-out-line::v-deep {
+  button {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+::v-deep .note-label .base-label__help {
+  padding-left: 0;
+}
+
+.info-box {
+  font-family: $font-family-primary;
+
+  &__item {
+    min-height: 44px;
+    border-bottom: 0.5px solid rgba(10, 10, 10, 0.15);
+    padding: 9.5px 0;
+  }
+
+  &__title {
+    font-size: $font-size-base;
+    color: rgba($black, 0.6);
+    line-height: 21px;
+    flex: 0 0 50%;
+    width: 116px;
+  }
+
+  .unit {
+    font-size: 10px;
+  }
+}
+
+::v-deep .contraception-tooltip {
+  align-items: center;
+
+  .label-tooltip {
+    &__main {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.format-error {
+  color: $red;
+  font-size: $font-size-base - 2;
+  line-height: 1.3;
+  text-align: left;
+  &--center {
+    text-align: center;
+  }
+}

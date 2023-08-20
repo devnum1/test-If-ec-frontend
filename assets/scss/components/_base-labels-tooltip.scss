@@ -1,0 +1,59 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ======================================================
+// Components :: Label
+// ======================================================
+
+.label-tooltip {
+  font-family: $font-family-base;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    background-color: rgba($green, 0.1);
+    height: 18px;
+    font-size: $font-size-base - 2;
+    color: $green;
+    line-height: 18px;
+    border-radius: $border-radius-base - 2;
+    padding: 0 8px;
+  }
+
+  &__btn {
+    background-color: transparent;
+    height: 16px;
+    width: 16px;
+    border: 1px solid $green;
+    font-size: $font-size-base - 4;
+    color: $green;
+    margin-left: 8px;
+    padding: 0;
+    border-radius: $border-radius-circle;
+    line-height: 1;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn-warning {
+    background-color: $red;
+    height: 16px;
+    width: 16px;
+    border: 1px solid $red;
+    font-size: 10px;
+    color: $white;
+    margin-left: 8px;
+    padding: 0;
+    border-radius: 50%;
+    line-height: 1;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

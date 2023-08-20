@@ -1,0 +1,145 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ======================================================
+// Layout :: Header
+// ======================================================
+
+.header {
+  position: relative;
+
+  &__icon-menu {
+    background-image: url('~assets/images/icon-menu.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    cursor: pointer;
+  }
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+
+  &__overlay {
+    width: 568px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: rgba($black, 0.15);
+    z-index: 1;
+  }
+
+  &__container {
+    background-color: $white;
+    padding: 20px;
+    width: 240px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 8;
+    min-height: -webkit-fill-available;
+
+    @include breakpoint-down(tablet) {
+      right: 0;
+    }
+  }
+
+  &__close-button {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    font-size: 14px;
+  }
+
+  &__info-label {
+    flex-grow: 1;
+    color: rgba($black, 0.82);
+  }
+
+  &__body-row {
+    padding: 12px 0 12px 0;
+    border-bottom: 0.5px solid rgba($black-7, 0.15);
+    align-items: center;
+    cursor: pointer;
+
+    &--bottom {
+      position: absolute;
+      bottom: 30px;
+      width: calc(100% - 40px);
+      margin-bottom: 20px;
+    }
+  }
+
+  &__icon-right {
+    background-image: url('~assets/images/icon-right.svg');
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.icon-fonts--close {
+  cursor: pointer;
+}
+
+.pre-header {
+  position: fixed;
+  width: 375px;
+  z-index: 9;
+  top: 0;
+
+  .header {
+    background-color: $green;
+    text-align: left;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+
+    &-logo {
+      display: inline-block;
+    }
+
+    &__icon-menu {
+      position: relative !important;
+      display: inline-block;
+      float: left;
+      margin-right: 20px;
+      top: 0;
+      right: 0;
+      background-position: left center;
+    }
+
+    .rotate-text {
+      width: 84px;
+      background-color: yellow;
+      height: 84px;
+      display: block;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 16px;
+      position: relative;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .menu {
+    transition: all 0.3s linear;
+
+    &__overlay {
+      width: 375px;
+    }
+  }
+
+  .show-menu {
+    opacity: 1;
+  }
+}

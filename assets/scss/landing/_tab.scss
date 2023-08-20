@@ -1,0 +1,73 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.tab {
+  display: block;
+  padding: 0 0 31px;
+  background-color: $gray;
+
+  /* 選択されているタブのスタイルを変える */
+  input:checked + .tab-item {
+    width: 112px;
+    height: 88.31px;
+
+    @include breakpoint-down(tinyphone) {
+      width: 100px;
+    }
+
+    &:nth-of-type(1) {
+      background-image: url('#{$img}/course70-on.svg');
+    }
+
+    &:nth-of-type(2) {
+      background-image: url('#{$img}/course50-on.svg');
+    }
+  }
+
+  /*タブのスタイル*/
+  .tab-item {
+    display: inline-block;
+    width: 94px;
+    height: 88.31px;
+    margin: -60px 10px 0;
+    text-align: center;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 0.2s ease;
+
+    @include breakpoint-down(tinyphone) {
+      margin-top: -53px;
+      width: 80px;
+    }
+
+    &:nth-of-type(1) {
+      background-image: url('#{$img}/course70-off.svg');
+    }
+
+    &:nth-of-type(2) {
+      background-image: url('#{$img}/course50-off.svg');
+    }
+  }
+
+  /*ラジオボタンを全て消す*/
+  input[name='item'],
+  input[name='item02'] {
+    display: none;
+  }
+
+  /*タブ切り替えの中身のスタイル*/
+  .tab-content {
+    display: none;
+    padding: 0 20px;
+    overflow: hidden;
+    clear: both;
+  }
+
+  /*選択されているタブのコンテンツのみを表示*/
+  #course01:checked ~ #course01-content,
+  #course02:checked ~ #course02-content,
+  #course03:checked ~ #course03-content,
+  #course04:checked ~ #course04-content {
+    display: block;
+  }
+}

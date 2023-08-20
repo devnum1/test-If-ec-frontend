@@ -1,0 +1,206 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.slide-item {
+  padding: 4px;
+  margin-top: 12px;
+
+  &--inner {
+    padding: 8px;
+    padding-bottom: 16px;
+    background-color: $white;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px 0 rgba($black, 0.1);
+    border: 1px solid rgba($green, 0.15);
+  }
+
+  &__pet-info {
+    padding: 0 8px;
+
+    @include breakpoint-down(tinyphone) {
+      padding: 0 16px;
+    }
+  }
+
+  .contract {
+    &-type {
+      text-align: center;
+      font-size: 24px;
+      line-height: 30px;
+      color: $green;
+      margin-top: 24px;
+    }
+
+    &-no {
+      color: rgba($black, 0.6);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    &-date {
+      font-size: 14px;
+      text-align: center;
+      line-height: 21px;
+      padding-top: 4px;
+      color: rgba($black, 0.4);
+    }
+  }
+
+  .news {
+    &__item {
+      padding: 16px 0;
+      border-bottom: 0.5px solid rgba($gray-5, 0.15);
+      position: relative;
+      padding-right: 24px;
+      cursor: pointer;
+
+      a {
+        color: rgba($black, 0.82);
+        font-size: 16px;
+        line-height: 24px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      &:after {
+        content: '\e922';
+        font-family: $font-family-icons !important;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+        color: rgba($black, 0.6);
+        font-size: 12px;
+        margin-right: 10px;
+      }
+    }
+
+    &__desc {
+      color: rgba($black, 0.5);
+      font-size: 12px;
+      line-height: 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    &__warning {
+      color: $red;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}
+
+.contract-disable {
+  pointer-events: none;
+  color: rgba($black, 0.4);
+
+  .news__item {
+    &:after {
+      color: rgba($black, 0.2);
+    }
+  }
+}
+
+.title-rightline {
+  &--title {
+    position: relative;
+    font-size: 18px;
+    color: rgba($black, 0.82);
+    padding-left: 12px;
+    line-height: 1.25;
+    margin-top: 37px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background-color: $green;
+      border-radius: 10px;
+    }
+  }
+}
+.notice {
+  background: rgba($red, 0.1);
+  border: 5px solid rgba($red, 0.1);
+  padding: 11px 11px 7px;
+  color: $red;
+
+  &-container {
+    margin-top: 16px;
+  }
+
+  &__top {
+    display: flex;
+  }
+
+  &__icon {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: $red;
+    position: relative;
+    flex-basis: 20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    &:before {
+      content: '';
+      height: 6.5px;
+      width: 2px;
+      background-color: $white;
+      border-radius: 1px;
+      top: 5px;
+      left: 9px;
+      position: absolute;
+    }
+
+    &:after {
+      content: '';
+      height: 2px;
+      width: 2px;
+      background-color: $white;
+      border-radius: 50%;
+      bottom: 5px;
+      left: 9px;
+      position: absolute;
+    }
+  }
+
+  &__note {
+    text-align: right;
+    padding-top: 17px;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+
+  &__content {
+    padding-left: 7px;
+  }
+}
+
+.notice-pet {
+  margin: 15px 35px 0 35px;
+
+  @include breakpoint-down(smallphone) {
+    margin: 15px 28px 0 28px;
+  }
+
+  @include breakpoint-down(tinyphone) {
+    margin: 15px 12px 0 12px;
+  }
+}
+
+.slick-slider {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

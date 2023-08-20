@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClaimItemModal match Snapshot 1`] = `
+"<div class=\\"claim-item-modal\\">
+  <div class=\\"modal__overlay\\">
+    <div class=\\"modal__container\\">
+      <div class=\\"modal__body modal-claim\\">
+        <div class=\\"claim-title\\">
+          <div class=\\"claim-title__line\\">
+            お手元にご用意いただくもの
+          </div>
+        </div>
+        <div class=\\"claim-row\\">
+          <div class=\\"claim-row__number\\">
+            <div class=\\"claim-row__number__round\\">
+              1
+            </div>
+          </div>
+          <div class=\\"claim-row__text\\">
+            診療明細書の写真
+          </div>
+          <div class=\\"claim-row__icon\\"><img src=\\"~/assets/images/icon-contract.svg\\" class=\\"claim-row__icon-image\\"></div>
+        </div>
+        <div class=\\"claim-row\\">
+          <div class=\\"claim-row__number\\">
+            <div class=\\"claim-row__number__round\\">
+              2
+            </div>
+          </div>
+          <div class=\\"claim-row__text\\">
+            飼い主とペットが 一緒に写った写真
+          </div>
+          <div class=\\"claim-row__icon\\"><img src=\\"~/assets/images/icon-pet-owner.svg\\" class=\\"claim-row__icon-image\\"></div>
+        </div> <button type=\\"button\\" class=\\"btn btn--default btn--icon-right test btn--full\\">
+          <!---->
+          <!----> <span class=\\"btn__text\\">保険金を請求する</span> <i class=\\"icon-fonts icon-fonts--arrow-right\\"></i>
+          <!----></button>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

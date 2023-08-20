@@ -1,0 +1,46 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ======================================================
+// Components :: Info box
+// ======================================================
+
+.info-box {
+  font-family: $font-family-primary;
+
+  &__item {
+    min-height: 44px;
+    border-bottom: 0.5px solid rgba(10, 10, 10, 0.15);
+    padding: 9.5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: $font-size-base;
+    color: rgba($black, 0.6);
+    line-height: 21px;
+    flex: 0 0 50%;
+    padding-right: 15px;
+  }
+
+  .unit {
+    font-size: 10px;
+  }
+}
+
+::v-deep.pet-detail {
+  li {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    align-items: center;
+  }
+}
+
+::v-deep.payment {
+  li {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
+}

@@ -1,0 +1,79 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+.email-dropdown {
+  align-content: center;
+  position: relative;
+
+  &__input {
+    position: relative;
+  }
+
+  button {
+    padding: 0;
+    margin-left: -11.8px;
+    margin-right: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    top: 57px;
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  &__list {
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: $white;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba($blue, 0.15);
+    box-sizing: border-box;
+    margin-top: -0.9px;
+    border-radius: 7px;
+    padding: 10px 0;
+  }
+
+  &__item {
+    cursor: pointer;
+    padding-left: 2px;
+    padding: 5px 12px;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $white-1;
+      box-sizing: border-box;
+    }
+
+    &-local-part {
+      color: $black-3;
+    }
+
+    &-domain {
+      color: $black;
+      font-weight: 500;
+    }
+  }
+}

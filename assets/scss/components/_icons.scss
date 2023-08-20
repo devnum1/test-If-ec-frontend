@@ -1,0 +1,135 @@
+// 01EZTX9M3AWK0ZB16B6KYR56F1
+
+// ======================================================
+// Components :: Icons
+// ======================================================
+
+// Icon Fonts
+@font-face {
+  font-family: peticons;
+  src: url('#{$path-fonts}/peticons.ttf?u6hkk6') format('truetype'),
+    url('#{$path-fonts}/peticons.woff?u6hkk6') format('woff'),
+    url('#{$path-fonts}/peticons.svg?u6hkk6#peticons') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+[class^='icon-fonts--'],
+[class*=' icon-fonts--'] {
+  // use !important to prevent issues with browser extensions that change fonts
+  // stylelint-disable-next-line declaration-no-important
+  font-family: $font-family-icons !important;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$icon-fonts: 'icon-fonts';
+
+.#{$icon-fonts}--home:before {
+  content: '\e900';
+}
+.#{$icon-fonts}--search:before {
+  content: '\e901';
+}
+.#{$icon-fonts}--dog-run:before {
+  content: '\e902';
+}
+.#{$icon-fonts}--dog:before {
+  content: '\e903';
+}
+.#{$icon-fonts}--users:before {
+  content: '\e904';
+}
+.#{$icon-fonts}--bell:before {
+  content: '\e905';
+}
+.#{$icon-fonts}--menu:before {
+  content: '\e906';
+}
+.#{$icon-fonts}--new:before {
+  content: '\e907';
+}
+.#{$icon-fonts}--update:before {
+  content: '\e908';
+}
+.#{$icon-fonts}--reload:before {
+  content: '\e909';
+}
+.#{$icon-fonts}--pass:before {
+  content: '\e90a';
+}
+.#{$icon-fonts}--mail:before {
+  content: '\e90b';
+}
+.#{$icon-fonts}--user-menu:before {
+  content: '\e90c';
+}
+.#{$icon-fonts}--camera:before {
+  content: '\e90d';
+}
+.#{$icon-fonts}--phone:before {
+  content: '\e90e';
+}
+.#{$icon-fonts}--image:before {
+  content: '\e90f';
+}
+.#{$icon-fonts}--paper:before {
+  content: '\e910';
+}
+.#{$icon-fonts}--cake:before {
+  content: '\e911';
+}
+.#{$icon-fonts}--dog-foot:before {
+  content: '\e912';
+}
+.#{$icon-fonts}--eye:before {
+  content: '\e914';
+}
+.#{$icon-fonts}--oval:before {
+  content: '\e915';
+}
+.#{$icon-fonts}--dot:before {
+  content: '\e916';
+}
+.#{$icon-fonts}--setting:before {
+  content: '\e917';
+}
+.#{$icon-fonts}--combined:before {
+  content: '\e918';
+}
+.#{$icon-fonts}--close:before {
+  content: '\e91a';
+}
+.#{$icon-fonts}--play:before {
+  content: '\e91b';
+}
+.#{$icon-fonts}--circle:before {
+  content: '\e91d';
+}
+.#{$icon-fonts}--arrow-right:before {
+  content: '\e91e';
+}
+.#{$icon-fonts}--plus:before {
+  content: '\e91f';
+}
+.#{$icon-fonts}--check:before {
+  content: '\e920';
+}
+.#{$icon-fonts}--check-success:before {
+  content: '\e921';
+}
+.#{$icon-fonts}--back:before {
+  content: '\e922';
+}
+.#{$icon-fonts}--plus-bold:before {
+  content: '\e923';
+}
+.#{$icon-fonts}--minus:before {
+  content: '\e924';
+}

@@ -1,0 +1,5685 @@
+openapi: 3.0.0
+info:
+  version: '1.0'
+  title: APIs of jpmo-bff
+  termsOfService: http://localhost:8003
+  contact:
+    name: eBaoTech
+tags:
+  - name: address
+    description: Search Address Master Controller Impl
+  - name: product
+    description: Product Controller Impl
+  - name: policy
+  - name: account
+  - name: common
+  - name: proposal
+  - name: cs
+  - name: codemaster
+paths:
+  /bff/codemaster/NWEB025:
+    post:
+      tags:
+        - codemaster
+      summary: get diagnosis config by body site code
+      description: get diagnosis config by body site code
+      operationId: getBodySiteDiagnosisUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetBodySiteDiagnosisRequest'
+        description: model
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBodySiteDiagnosisResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/claim/NWEB024:
+    post:
+      tags:
+        - claim
+      summary: register claim case
+      description: register claim case
+      operationId: registerClaimCaseUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterClaimCaseRequest'
+        description: model
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisterClaimCaseResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/account/NWEB022:
+    post:
+      tags:
+        - account
+      summary: 'update bank account '
+      description: update bank account
+      operationId: updateBankAccountUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateBankAccountRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateBankAccountResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/policy/NWEB021:
+    post:
+      tags:
+        - policy
+      summary: 'update diagnosis declaration '
+      description: update diagnosis declaration
+      operationId: updateDiagnosisDeclUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDiagnosiDescRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateDiagnosisDescResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/query/NWEB019:
+    post:
+      tags:
+        - query
+      summary: 既契約情報詳細取得API
+      description: 既契約情報詳細取得API
+      operationId: queryAllPolicyListUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyListRequest'
+        description: model
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewPolicyListResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/common/NWEB023:
+    post:
+      tags:
+        - common
+      summary: downloadFile
+      description: downloadFile
+      operationId: downloadFileUsingPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FileDownloadRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/cs/NWEB015:
+    post:
+      tags:
+        - cs
+      summary: change pet portrayal
+      description: change pet portrayal
+      operationId: changePetPortrayalUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePetPortrayRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChangePetPortrayResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/cs/NWEB017:
+    post:
+      tags:
+        - cs
+      summary: auto renew stop
+      description: auto renew stop
+      operationId: autoRenewStopUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AutoRenewStopRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutoRenewStopResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/cs/NWEB018:
+    post:
+      tags:
+        - cs
+      summary: save card
+      description: save card
+      operationId: saveCardUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveCardRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaveCardResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/product/NWEB016:
+    post:
+      tags:
+        - product
+      summary: get plan detail
+      description: get plan detail
+      operationId: getPlanDetailUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetPlanDetailRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPlanDetailResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/cs/NWEB020:
+    post:
+      tags:
+        - cs
+      summary: do policy update for renew
+      description: do policy update for renew
+      operationId: doPolicyUpdateForRenewPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DoPolicyUpdateForRenewRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DoPolicyUpdateForRenewResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/policy/NWEB012:
+    post:
+      tags:
+        - policy
+      summary: get policy information
+      description: get policy information
+      operationId: getPolicyInfoUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetPolicyInfoRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPolicyInfoResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/policy/NWEB011:
+    post:
+      tags:
+        - policy
+      summary: save card , collect premium and  inforce policy
+      description: ssave card , collect premium and  inforce policy
+      operationId: collectionAndInforceUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CollectionAndInforceRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollectionAndInforceResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/policy/NWEB010:
+    post:
+      tags:
+        - policy
+      summary: save declaration info and auto uw
+      description: save declaration info and auto uw
+      operationId: saveDeclAndAutoUWUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveDeclAndAutoUWRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaveDeclAndAutoUWResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/proposal/NWEB013:
+    post:
+      tags:
+        - proposal
+      summary: get proposal information
+      description: get proposal information
+      operationId: getProposalInformationUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetProposalInformationRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetProposalInformationResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/proposal/NWEB005:
+    post:
+      tags:
+        - proposal
+      summary: save proposal
+      description: save proposal
+      operationId: saveProposalInfoUsingPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveProposalInfoRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaveProposalInfoResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/account/NWEB007:
+    get:
+      tags:
+        - account
+      summary: ユーザー情報の取得API
+      description: ユーザー情報の取得API
+      operationId: getCurrentAccountInfoUsingGET
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCurrentAccountInfoResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/account/NWEB008:
+    post:
+      tags:
+        - account
+      summary: ユーザー情報の更新API
+      description: ユーザー情報の更新API
+      operationId: updateCurrentAccountInfoUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCurrentAccountInfoRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateCurrentAccountInfoResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/common/NWEB009:
+    post:
+      tags:
+        - common
+      summary: 認証コード有効性確認API
+      description: 認証コード有効性確認API
+      operationId: validationAuthCodeUsingPost
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ValidationAuthCodeRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationAuthCodeResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/common/NWEB014:
+    post:
+      tags:
+        - common
+      summary: ファイルアップロード
+      description: ファイルアップロード
+      operationId: uploadFileUsingPost
+      parameters:
+        - name: fileType
+          in: query
+          description: fileType
+          required: false
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  description: file
+                  type: string
+                  format: binary
+              required:
+                - file
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileUploadResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/policy/NWEB003:
+    post:
+      tags:
+        - policy
+      summary: application
+      description: application
+      operationId: applicationUsingPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewApplicationRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyPlanApplicationResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/product/NWEB002:
+    post:
+      tags:
+        - product
+      summary: getPlanListAndCalcPrem
+      description: get plan list by product code and calculate premium
+      operationId: getPlanListAndCalcPremPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetPlanListAndCalcRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPlanListAndCalcResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/product/NWEB001:
+    get:
+      tags:
+        - product
+      summary: getPetBreed
+      operationId: getPetBreedUsingGET
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PetBreedResponse'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/product/NWEB004:
+    post:
+      tags:
+        - product
+      summary: calcPrem
+      operationId: calcPremPOST
+      parameters:
+        - name: Authorization
+          in: header
+          description: access token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalcPremByGiProductCodeRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalcPremByGiProductCodeResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /bff/address/NWEB006:
+    post:
+      tags:
+        - address
+      summary: searchAddress
+      description: get address master information by postcode
+      operationId: searchAddressUsingPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchAddressMasterRequest'
+        description: request
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchAddressMasterResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+servers:
+  - url: http://localhost:8003
+components:
+  schemas:
+    TPetBreed:
+      type: object
+      properties:
+        listId:
+          type: integer
+          format: int
+        petCode:
+          type: string
+        petShape:
+          type: string
+        typeName:
+          type: string
+      title: TPetBreed
+    PetBreedResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        petBreedList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TPetBreed'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: PetBreedResponse
+    SearchAddressMasterRequest:
+      type: object
+      properties:
+        postCode:
+          type: string
+          description: 郵便番号
+          example: 640941
+      title: SearchAddressMasterRequest
+    SearchAddressMasterResponse:
+      type: object
+      properties:
+        addressList:
+          type: array
+          description: 住所リスト
+          items:
+            $ref: '#/components/schemas/AddressList'
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: SearchAddressMasterResponse
+    AddressList:
+      type: object
+      properties:
+        postCode:
+          type: string
+          description: 郵便番号
+          example: 640941
+        address1Kanji:
+          type: string
+          description: 都道府県名
+          example: 北海道
+        address2Kanji:
+          type: string
+          description: 市区町村名
+          example: 札幌市中央区
+        address3Kanji:
+          type: string
+          description: 町域名
+          example: 旭ケ丘
+        address1Kana:
+          type: string
+          description: 都道府県カナ
+          example: ﾎﾂｶｲﾄﾞｳ
+        address2Kana:
+          type: string
+          description: 市区町村カナ
+          example: ｻﾂﾎﾟﾛｼﾁﾕｳｵｳｸ
+        address3Kana:
+          type: string
+          description: 町域カナ
+          example: ｱｻﾋｶﾞｵｶ
+      title: AddressList
+    GetPlanListAndCalcRequest:
+      type: object
+      properties:
+        productCode:
+          type: string
+          example: 1
+          description: 商品コード
+        calcDate:
+          type: string
+          format: date-time
+          example: 2021-01-05
+          description: premium calculate date
+        usableParams:
+          type: object
+          description: premium calculate parameters such as
+            changeType,dogType,petAge,petCategory,petMonthAge，petWeight,planCode
+      title: GetPlanListAndCalcRequest
+    GetPlanListAndCalcResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        planList:
+          type: array
+          description: プランlist
+          items:
+            $ref: '#/components/schemas/PlanCfgModel'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        productCode:
+          type: string
+          example: 1
+          description: 商品コード
+        formulaId:
+          type: string
+          example: 1
+          description: formulaId
+        validateDate:
+          type: string
+          format: date-time
+        expiryDate:
+          type: string
+          format: date-time
+      title: GetPlanListAndCalcResponse
+    PlanCfgModel:
+      type: object
+      properties:
+        planCode:
+          type: string
+          example: 123456789
+          description: プランコード
+        planName:
+          type: string
+          example: abcd
+          description: プラン名称
+        planAbbr:
+          type: string
+          example: abcd
+          description: プラン略称
+        planStatus:
+          type: integer
+          format: int32
+          example: 1
+          description: プラン状態
+        startDate:
+          type: string
+          format: date
+          example: 2099-12-31
+          description: 開始日(yyyy-MM-dd)
+        endDate:
+          type: string
+          format: date
+          example: 2099-12-31
+          description: 完了日(yyyy-MM-dd)
+        memo:
+          type: string
+          example: 備考コメント
+          description: 備考
+        parentPlan:
+          type: string
+          example: 123456789
+          description: 親プランコード
+        planCfgLiabDetailListVoList:
+          type: array
+          description: 補償リスト
+          items:
+            $ref: '#/components/schemas/PlanCfgLiabListModel'
+        planCfgFreqList:
+          type: array
+          description: 払込方法情報
+          items:
+            $ref: '#/components/schemas/PlanCfgFreqModel'
+        planCfgPayModeList:
+          type: array
+          description: 払込経路情報
+          items:
+            $ref: '#/components/schemas/PlanCfgPayModeModel'
+        subPlanFlg:
+          type: string
+          example: 0
+          description: サブプランフラグ
+        planCfgClaimGuidanceList:
+          type: array
+          example: 0
+          description: 請求事由リスト
+          items:
+            $ref: '#/components/schemas/PlanCfgClaimGuidanceModel'
+        calcAmount:
+          type: number
+          example: N
+          description: calculate Amount
+        calcResult:
+          type: number
+          example: '0'
+          description: calculate Result
+        planCfgOtherItemListVo:
+          example: N
+          description: 追加設定
+          items:
+            $ref: '#/components/schemas/PlanCfgOtherItemListModel'
+      title: PlanCfgModel
+    PlanCfgOtherItemListModel:
+      type: object
+      properties:
+        listId:
+          type: integer
+          format: int64
+        planCode:
+          type: string
+          example: 123456789
+          description: プランコード
+        planCfgOtherItemDetailVO:
+          type: array
+          example: 123456789
+          description: 追加項目
+          items:
+            $ref: '#/components/schemas/PlanCfgOtherItemModel'
+      title: PlanCfgOtherItemListModel
+    PlanCfgOtherItemModel:
+      type: object
+      properties:
+        otherItemName:
+          type: string
+          example: String
+          description: 追加設定
+        otherItemValue:
+          type: string
+          example: String
+          description: 追加設定値
+        otherItemDesc:
+          type: string
+          example: String
+          description: 説明
+        otherItemCode:
+          type: string
+          example: String
+          description: 追加設定code
+      title: PlanCfgOtherItemModel
+    PlanCfgPayModeModel:
+      type: object
+      properties:
+        listId:
+          type: integer
+          format: int64
+        planCode:
+          type: string
+          example: 123456789
+          description: プランコード
+        payMode:
+          type: integer
+          format: int32
+          example: 123
+          description: 払込経路
+        isChecked:
+          type: string
+          example: N
+          description: checked
+      title: PlanCfgPayModeModel
+    PlanCfgAmountModel:
+      type: object
+      properties:
+        listId:
+          type: integer
+          format: int64
+        sumAssured:
+          type: number
+          example: 123
+          description: 保険金額
+        isDeleted:
+          type: string
+          example: N
+          description: 削除
+      title: PlanCfgAmountModel
+    PlanCfgClaimGuidanceModel:
+      type: object
+      properties:
+        listId:
+          type: integer
+          format: int64
+        planCode:
+          type: string
+          example: 123456789
+          description: プランコード
+        claimCode:
+          type: string
+          example: 123
+          description: Claim Code
+        isDeleted:
+          type: string
+          example: N
+          description: 削除ＦＬＧ
+      title: PlanCfgClaimGuidanceModel
+    PlanCfgCoverModel:
+      type: object
+      properties:
+        listId:
+          type: integer
+          format: int64
+        coveragePeriod:
+          type: string
+          example: 年
+          description: 保険期間単位
+        coverageYear:
+          type: integer
+          format: int32
+          example: 3
+          description: 保険期間
+        isDeleted:
+          type: string
+          example: N
+          description: 削除
+      title: PlanCfgCoverModel
+    PlanCfgFreqModel:
+      type: object
+      properties:
+        listId:
+          type: integer
+          format: int64
+        planCode:
+          type: string
+          example: 123456789
+          description: プランコード
+        paymentFreq:
+          type: integer
+          format: int32
+          example: 1
+          description: payment frequency
+        isChecked:
+          type: string
+          example: N
+          description: checked
+      title: PlanCfgFreqModel
+    PlanCfgLiabListModel:
+      type: object
+      properties:
+        productCode:
+          type: string
+          example: 123456789
+          description: Market商品コード
+        productName:
+          type: string
+          example: abcd
+          description: Market商品名
+        planCfgLiabDetailVoList:
+          type: array
+          description: 補償情報
+          items:
+            $ref: '#/components/schemas/PlanCfgLiabModel'
+        planCfgCoverDetailList:
+          type: array
+          description: 保険情報
+          items:
+            $ref: '#/components/schemas/PlanCfgCoverModel'
+        planCfgAmountDetailList:
+          type: array
+          description: 保険金額情報
+          items:
+            $ref: '#/components/schemas/PlanCfgAmountModel'
+        allLiabList:
+          type: array
+          description: ALL補償リスト
+          items:
+            $ref: '#/components/schemas/Liability'
+        isDeleted:
+          type: string
+          example: N
+          description: 削除
+      title: PlanCfgLiabListModel
+    PlanCfgLiabModel:
+      type: object
+      properties:
+        productCode:
+          type: string
+          example: 123456789
+          description: Market商品コード
+        productName:
+          type: string
+          example: abcd
+          description: Market商品名
+        liabCode:
+          type: string
+          example: abcd
+          description: 補償コード
+        liabName:
+          type: string
+          example: abcd
+          description: 補償名称
+        subLiabCode:
+          type: string
+          example: abcd
+          description: サブ補償コード
+        subLiabName:
+          type: string
+          example: abcd
+          description: サブ補償名称
+        maxValue:
+          type: string
+          example: abcd
+          description: 支払限度額
+        disclaim:
+          type: string
+          example: abcd
+          description: 免責金額
+        payRate:
+          type: number
+          example: 0.5
+          description: 補償割合
+        isDeleted:
+          type: string
+          example: N
+          description: 削除
+      title: PlanCfgLiabModel
+    Liability:
+      type: object
+      properties:
+        formulaIdClaim:
+          type: string
+          description: claim calculation formula
+        liabCode:
+          type: string
+          description: liability code
+        liabName:
+          type: string
+          description: liability name
+      title: Liability
+    PolicyPlanApplicationResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        policy:
+          $ref: '#/components/schemas/JpPolicy'
+        isAutoUwPass:
+          type: string
+          description:
+            'is auto underwrite pass, N-not pass, Y-pass, W-need diagnosis
+            declaration '
+      title: PolicyPlanApplicationResponse
+    NewApplicationRequest:
+      type: object
+      properties:
+        certiCode:
+          type: string
+          description: 顧客認証Code
+        productCode:
+          type: string
+          description: 商品コード
+        coverageInfoList:
+          type: array
+          description: 商品情報
+          items:
+            $ref: '#/components/schemas/NewCoverageInfo'
+        petInfo:
+          $ref: '#/components/schemas/JpPetInfo'
+        planCode:
+          type: string
+          description: プランCODE
+      title: NewApplicationRequest
+    JpPolicy:
+      type: object
+      properties:
+        policyCode:
+          type: string
+          description: policy code
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        subjectId:
+          type: integer
+          format: int64
+          description: insured subject id
+        uwMethod:
+          type: string
+          description: 1-auto underwriting 2-manual underwriting
+      title: JpPolicy
+    TBodySiteDiagnosisCfg:
+      type: object
+      properties:
+        listId:
+          type: integer
+        bodySiteCode:
+          type: string
+        diagnosisCode:
+          type: string
+        diagnosisName:
+          type: string
+        diagnosisClassification:
+          type: string
+      title: TBodySiteDiagnosisCfg
+    JpPetInfo:
+      type: object
+      properties:
+        petName:
+          type: string
+          description: ペート名
+        petType:
+          type: integer
+          format: int64
+          description: ペート種類
+        gender:
+          type: string
+          description: 性別
+        birthdate:
+          type: string
+          format: date
+          description: 生年月日
+        petBreed:
+          type: integer
+          format: int64
+          description: ペート種類
+        weight:
+          type: number
+          description: 体重
+        contraception:
+          type: string
+          description: contraception
+        declInpatient:
+          type: array
+          description: 告知
+          items:
+            $ref: '#/components/schemas/JpPetInfoDelcartionInfo'
+        birthDateDiv:
+          type: string
+          description: ペット誕生日推定区分
+      title: JpPetInfo
+      description: ペート情報  、
+    JpPetInfoDelcartionInfo:
+      type: object
+      properties:
+        declNo:
+          type: string
+          description: declaration number
+        declAnswer:
+          type: string
+          description: declaration answer
+        outsideFlag:
+          type: string
+          description: outside flag (disuse)
+        outsideAgencyName:
+          type: string
+          description: outside agency name (disuse)
+        outsidePolicyCode:
+          type: string
+          description: outside policy code (disuse)
+        declImage:
+          type: object
+          description: declaration other information
+      title: JpPetInfoDelcartionInfo
+      description: ペート告知
+    NewCoverageInfo:
+      type: object
+      properties:
+        productCode:
+          type: string
+          description: 商品コード
+        paymentFreq:
+          type: string
+          example: 1
+          description: payment frequency<br>1 - yearly<br>2 - half yearly<br>3 -
+            quarterly<br>4 - monthly<br>5 - single
+          enum:
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+        totalPremAf:
+          type: number
+          description: total Premium after discount
+        chargePeriod:
+          type: string
+          description: charge Period
+        chargeYear:
+          type: integer
+          format: int32
+          description: charge Year
+        coveragePeriod:
+          type: string
+          description: coverage Period
+        coverageYear:
+          type: integer
+          format: int32
+          description: coverage Year
+        sumAssured:
+          type: number
+          description: sum Assured
+        planCode:
+          type: string
+          description: plan Code
+        coverageSerialId:
+          type: integer
+          format: int32
+          description: coverage Serial Id
+        masterCoverageSerialId:
+          type: integer
+          format: int32
+          description: master Coverage Serial Id
+        countWay:
+          type: integer
+          format: int32
+          description: count Way
+        beginDate:
+          type: string
+          format: date-time
+          description: begin Date
+        endDate:
+          type: string
+          format: date-time
+          description: end Date
+        insuredNum:
+          type: integer
+          format: int32
+          description: insured Number
+        payMode:
+          type: integer
+          format: int32
+          description: pay Mode
+        validateDate:
+          type: string
+          format: date-time
+          description: validate date
+        expiryDate:
+          type: string
+          format: date-time
+          description: expiry date
+      title: NewCoverageInfo
+    CalcPremByGiProductCodeRequest:
+      type: object
+      properties:
+        productCode:
+          type: string
+        usableParams:
+          type: object
+          description: premium calculate parameters
+            changeType,dogType,petAge,petCategory,petMonthAge，petWeight,planCode
+      title: CalcPremByGiProductCodeRequest
+    PremCalcResponse:
+      type: object
+      properties:
+        calcResult:
+          type: number
+          description: calculation result
+      title: PremCalcResponse
+    GetCurrentAccountInfoResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+          description: return code
+        firstName1:
+          type: string
+          description: お名前
+        firstName2:
+          type: string
+          description: お名前
+        lastName1:
+          type: string
+          description: フリガナ
+        lastName2:
+          type: string
+          description: フリガナ
+        gender:
+          type: string
+          description: 性別
+        birthDate:
+          type: string
+          format: date
+          description: 生年月日
+        postCode:
+          type: string
+          description: 郵便番号
+        telephone:
+          type: string
+          description: 電話番号
+        email:
+          type: string
+          description: メールアドレス
+        bankCode:
+          type: string
+          description: 金融機関Code
+        branchCode:
+          type: string
+          description: 支店code
+        accountType:
+          type: integer
+          description: 口座種別;1-普通;2-当座;3-貯蓄
+        bankAccount:
+          type: string
+          description: 口座番号
+        accoName:
+          type: string
+          description: 口座名義人（カナ）
+        version:
+          type: number
+          description: version
+      title: GetCurrentAccountInfoResponse
+    UpdateCurrentAccountInfoRequest:
+      type: object
+      properties:
+        firstName1:
+          type: string
+          description: お名前
+        firstName2:
+          type: string
+          description: お名前
+        lastName1:
+          type: string
+          description: フリガナ
+        lastName2:
+          type: string
+          description: フリガナ
+        gender:
+          type: string
+          description: 性別
+        birthDate:
+          type: string
+          format: date
+          description: 生年月日
+        postCode:
+          type: string
+          description: 郵便番号
+        telephone:
+          type: string
+          description: 電話番号
+        version:
+          type: number
+          description: version
+      title: UpdateCurrentAccountInfoRequest
+    UpdateCurrentAccountInfoResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+          description: return code
+        version:
+          type: number
+          description: version
+      title: UpdateCurrentAccountInfoResponse
+    ValidationAuthCodeRequest:
+      type: object
+      properties:
+        authCode:
+          type: string
+          description: 認証コード
+      title: ValidationAuthCodeRequest
+    ValidationAuthCodeResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+          description: return code
+      title: ValidationAuthCodeResponse
+    SaveProposalInfoRequest:
+      type: object
+      properties:
+        certiCode:
+          type: string
+          description: user id
+        jpPetInfo:
+          $ref: '#/components/schemas/JpPetInfo'
+        coverageInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewCoverageInfo'
+      title: SaveProposalInfoRequest
+    TProposalSubjectPet:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        birthDate:
+          type: string
+          format: date
+          description: birthday
+        childObjects:
+          type: array
+          items:
+            type: object
+        contraception:
+          type: string
+          description: contraception
+        declInpatient:
+          type: string
+        dirtyObject:
+          type: boolean
+        gender:
+          type: string
+          description: gender
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        paymentFreq:
+          type: integer
+          format: int32
+          description: payment frequency
+        petBreed:
+          type: integer
+          format: int32
+          description: pet breed
+        petName:
+          type: string
+          description: pet name
+        petType:
+          type: integer
+          format: int32
+          description: pet type
+        planCode:
+          type: string
+          description: plan code
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        subjectId:
+          type: integer
+          format: int64
+          description: subject id
+        subjectSeq:
+          type: integer
+          format: int64
+          description: subject sequence
+        weight:
+          type: number
+          description: pet weight
+      title: TProposalSubjectPet
+    ProductInfo:
+      type: object
+      properties:
+        chargePeriod:
+          type: integer
+          format: int32
+          description: charge period
+        premTerm:
+          type: number
+          description: regular premium
+        productCode:
+          type: string
+          description: product code
+        validateDate:
+          type: string
+          format: date-time
+          description: validate date
+        planCode:
+          type: string
+          description: plan Code
+      title: ProductInfo
+      description: contract product information
+    SaveProposalInfoResponse:
+      type: object
+      properties:
+        affinityCode:
+          type: string
+          description: affinity code
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: SaveProposalInfoResponse
+    GetProposalInformationRequest:
+      type: object
+      properties:
+        affinityCode:
+          type: string
+          description: affinity code
+        certiCode:
+          type: string
+          description: bff user id
+      title: GetProposalInformationRequest
+    GetProposalInformationResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        proposalPolicy:
+          $ref: '#/components/schemas/TProposalPolicy'
+        petBreedDesc:
+          type: string
+          description: pet breed name
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: GetProposalInformationResponse
+    TProposalPolicy:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        affinityCode:
+          type: string
+          description: affinity code
+        applyCode:
+          type: string
+          description: apply code
+        applyDate:
+          type: string
+          format: date-time
+          description: apply date
+        attentionStatus:
+          type: string
+          description: attention status
+        benes:
+          type: array
+          items:
+            $ref: '#/components/schemas/TProposalBene'
+        childObjects:
+          type: array
+          items:
+            type: object
+        comment:
+          type: string
+          description: proposal comment
+        coverages:
+          type: array
+          items:
+            $ref: '#/components/schemas/TProposalProduct'
+        customerDeclines:
+          type: array
+          items:
+            $ref: '#/components/schemas/TProposalCustomerDecline'
+        dirtyObject:
+          type: boolean
+        documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/TProposalDocument'
+        expiryDate:
+          type: string
+          format: date-time
+          description: expiry date
+        initOrderId:
+          type: integer
+          format: int64
+          description: initial order id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyHolder:
+          $ref: '#/components/schemas/TProposalPolicyHolder'
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        promiseStatus:
+          type: string
+          description: promise status
+        proposalStatus:
+          type: integer
+          format: int32
+          description: proposal status
+        proposalVersion:
+          type: integer
+          description: proposal version
+          format: int64
+        purposeStatus:
+          type: string
+          description: purpose status
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        riskCommenceDate:
+          type: string
+          format: date-time
+          description: risk commencement date
+        shardKey:
+          type: integer
+          format: int64
+        subjectInsureds:
+          type: array
+          items:
+            $ref: '#/components/schemas/TProposalSubjectInsured'
+        subjectPets:
+          type: array
+          items:
+            $ref: '#/components/schemas/TProposalSubjectPet'
+        thirdPartyPayFlg:
+          type: string
+          description: third party pay flag
+        userId:
+          type: integer
+          format: int64
+          description: bff user id
+        validateDate:
+          type: string
+          format: date-time
+          description: validate date
+      title: TProposalPolicy
+    TProposalPolicyHolder:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        accoName:
+          type: string
+          description: account name
+        accountId:
+          type: integer
+          format: int64
+          description: account id
+        accountType:
+          type: integer
+          format: int32
+          description: account type
+        activeStatus:
+          type: integer
+          format: int32
+          description: active status
+        address1:
+          type: string
+          description: address 1 kanji
+        address1Alias:
+          type: string
+          description: address 1 kana
+        address2:
+          type: string
+          description: address 2 kanji
+        address2Alias:
+          type: string
+          description: address 2 kana
+        addressId:
+          type: integer
+          format: int64
+          description: address id
+        applicantAge:
+          type: integer
+          format: int32
+          description: applicant age
+        bankAccount:
+          type: string
+          description: bank account
+        bankCode:
+          type: string
+          description: bank code
+        birthDate:
+          type: string
+          format: date
+          description: birthday
+        branchCode:
+          type: string
+          description: branch code
+        cardId:
+          type: string
+          description: card id
+        cardSeq:
+          type: string
+          description: card sequence
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        email:
+          type: string
+          description: email
+        firstName:
+          type: string
+          description: first name(kanji)
+        firstName2:
+          type: string
+          description: first name (kana)
+        gender:
+          type: string
+          description: gender
+        identifyName:
+          type: string
+          description: identify name(kanji)
+        identifyNameKana:
+          type: string
+          description: identify name(kana)
+        lastName:
+          type: string
+          description: last name(kaji)
+        lastName2:
+          type: string
+          description: last name (kana)
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        memberId:
+          type: string
+          description: member id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        postCode:
+          type: string
+          description: postcode
+        prefectureCode:
+          type: string
+          description: prefecture code
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        telephone:
+          type: string
+          description: telephone number
+      title: TProposalPolicyHolder
+    TProposalProduct:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        amount:
+          type: number
+          description: sum assured
+        applyDate:
+          type: string
+          format: date-time
+          description: apply date
+        chargePeriod:
+          type: integer
+          format: int32
+          description: charge period
+        chargeYear:
+          type: integer
+          format: int32
+          description: charge year
+        childObjects:
+          type: array
+          items:
+            type: object
+        countWay:
+          type: integer
+          format: int32
+          description: count way
+        coveragePeriod:
+          type: integer
+          format: int32
+          description: coverage period
+        coverageYear:
+          type: integer
+          format: int32
+          description: coverage year
+        dirtyObject:
+          type: boolean
+        expiryDate:
+          type: string
+          format: date-time
+          description: expiry date
+        itemId:
+          type: integer
+          format: int64
+          description: item id
+        liabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/TProposalLiab'
+        masterId:
+          type: integer
+          format: int64
+          description: master item id
+        masterSerialId:
+          type: integer
+          format: int64
+          description: master serial id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        paidupDate:
+          type: string
+          format: date-time
+          description: paidup date
+        payMode:
+          type: integer
+          format: int32
+          description: pay mode
+        payType:
+          type: integer
+          format: int32
+          description: pay type
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        premCalcBase:
+          type: integer
+          format: int32
+          description: premium calculate base
+        premTerm:
+          type: number
+          description: prem term
+        premYear:
+          type: number
+          description: prem year
+        productId:
+          type: integer
+          format: int64
+          description: product id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        riskCommenceDate:
+          type: string
+          format: date-time
+          description: risk commencement date
+        serialId:
+          type: integer
+          format: int64
+          description: serial id
+        shardKey:
+          type: integer
+          format: int64
+        validateDate:
+          type: string
+          format: date-time
+          description: validate date
+      title: TProposalProduct
+    TProposalSubject:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        itemId:
+          type: integer
+          format: int64
+          description: item id
+        liabListId:
+          type: integer
+          format: int64
+          description: liability list id
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        subjectId:
+          type: integer
+          format: int64
+          description: subject id
+        subjectSeq:
+          type: integer
+          format: int64
+          description: subject sequence
+        subjectType:
+          type: integer
+          format: int32
+          description: subject type
+      title: TProposalSubject
+    TProposalSubjectInsured:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        activeStatus:
+          type: integer
+          format: int32
+          description: active status
+        address1:
+          type: string
+          description: address 1 kanji
+        address1Alias:
+          type: string
+          description: address 1 kana
+        address2:
+          type: string
+          description: address 2 kanji
+        address2Alias:
+          type: string
+          description: address 2 kana
+        addressId:
+          type: integer
+          format: int64
+          description: address id
+        birthDate:
+          type: string
+          format: date
+          description: birthday
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        email:
+          type: string
+          description: email
+        firstName:
+          type: string
+          description: first name(kanji)
+        firstName2:
+          type: string
+          description: first name（kana）
+        gender:
+          type: string
+          description: gender
+        identifyName:
+          type: string
+          description: identify name
+        identifyNameKana:
+          type: string
+          description: identify name kana
+        lastName:
+          type: string
+          description: last name (kanji)
+        lastName2:
+          type: string
+          description: last name(kana)
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        postCode:
+          type: string
+          description: postcode
+        prefecture:
+          type: string
+          description: prefecture
+        prefectureCode:
+          type: string
+          description: prefecture code
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        relationToPh:
+          type: integer
+          format: int32
+          description: relation to policy holder
+        shardKey:
+          type: integer
+          format: int64
+        subjectId:
+          type: integer
+          format: int64
+          description: subject id
+        subjectSeq:
+          type: integer
+          format: int64
+          description: subject sequence
+        telephone:
+          type: string
+          description: telephone
+      title: TProposalSubjectInsured
+    TProposalBene:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        activeStatus:
+          type: integer
+          format: int32
+          description: activie status
+        beneType:
+          type: string
+          description: beneciary type
+        childObjects:
+          type: array
+          items:
+            type: object
+        designation:
+          type: integer
+          format: int32
+          description: designation
+        dirtyObject:
+          type: boolean
+        firstName:
+          type: string
+          description: first name (kanji)
+        firstName2:
+          type: string
+          description: first name (kana)
+        identifyName:
+          type: string
+          description: identify name(kanji)
+        identifyNameKana:
+          type: string
+          description: identify name(kana)
+        lastName:
+          type: string
+          description: last name kanji
+        lastName2:
+          type: string
+          description: last name kana
+        legalBene:
+          type: string
+          description: legal beneciary
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        shareOrder:
+          type: integer
+          format: int32
+          description: share order
+        shareRate:
+          type: number
+          description: share rate
+        telephone:
+          type: string
+          description: telephone
+      title: TProposalBene
+    TProposalCustomerDecline:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        activeStatus:
+          type: integer
+          format: int32
+          description: active status
+        childObjects:
+          type: array
+          items:
+            type: object
+        declAnswer:
+          type: string
+          description: declaration answer
+        declDate:
+          type: string
+          description: declaration date
+          format: date-time
+        declNo:
+          type: string
+          description: declaration number
+        dirtyObject:
+          type: boolean
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+      title: TProposalCustomerDecline
+    TProposalDocument:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        activeStatus:
+          type: integer
+          format: int32
+          description: active status
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        docId:
+          type: string
+          description: document id
+        docName:
+          type: string
+          description: document name
+        docType:
+          type: string
+          description: document type
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+      title: TProposalDocument
+    TProposalLiab:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        amount:
+          type: number
+          description: sum assured
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        itemId:
+          type: integer
+          format: int64
+          description: item id
+        liabId:
+          type: integer
+          format: int64
+          description: liability id
+        liabListId:
+          type: integer
+          format: int64
+          description: liability list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        premTerm:
+          type: number
+          description: regular premium
+        premYear:
+          type: number
+          description: yearly premium
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        subjects:
+          type: array
+          items:
+            $ref: '#/components/schemas/TProposalSubject'
+      title: TProposalLiab
+    SaveDeclAndAutoUWRequest:
+      type: object
+      properties:
+        certiCode:
+          type: string
+          description: 顧客認証Code
+        declarationInfo:
+          $ref: '#/components/schemas/DeclarationInfo'
+        policyId:
+          type: integer
+          format: int64
+          description: policyId
+      title: SaveDeclAndAutoUWRequest
+    SaveDeclAndAutoUWResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        policy:
+          $ref: '#/components/schemas/JpPolicy'
+      title: SaveDeclAndAutoUWResponse
+    DeclarationInfo:
+      type: object
+      properties:
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        hasOtherJoin:
+          type: string
+          description: insured By Other Company
+        otherCompanyName:
+          type: string
+          description: Other company name
+        contractDiagnosisTwoDeclList:
+          type: array
+          description: illness2 list
+          items:
+            $ref: '#/components/schemas/Declaration2DetailInfo'
+        contractDiagnosisThreeDeclList:
+          type: array
+          description: illness3 list
+          items:
+            $ref: '#/components/schemas/Declaration3DetailInfo'
+        otherHolderName:
+          type: string
+          description: Other policy holder name
+        otherPolicyNumber:
+          type: string
+          description: Other policy number
+        otherPolicyStatus:
+          type: string
+          description: Other policy status
+      title: DeclarationInfo
+    CollectionAndInforceRequest:
+      type: object
+      properties:
+        certiCode:
+          type: string
+          description: 顧客認証Code
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        cardInfo:
+          $ref: '#/components/schemas/NewCardInfo'
+      title: CollectionAndInforceRequest
+    CollectionAndInforceResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        policy:
+          $ref: '#/components/schemas/JpPolicy'
+      title: CollectionAndInforceResponse
+    NewCardInfo:
+      type: object
+      properties:
+        memberId:
+          type: string
+          description: 会員ID
+        cardSeq:
+          type: string
+          description: カード登録連番
+        cardMaskNumber:
+          type: string
+          description: card mask number
+        cardToken:
+          type: string
+          description: カードトークン
+        validityPeriod:
+          type: string
+          description: validityPeriod
+      title: NewCardInfo
+    GetPolicyInfoRequest:
+      type: object
+      properties:
+        policyId:
+          type: integer
+          format: int64
+          description: policyId
+        policyCode:
+          type: string
+          description: policyId
+      title: GetPolicyInfoRequest
+    GetPolicyInfoResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        diagnosisMaster:
+          type: array
+          items:
+            $ref: '#/components/schemas/TDiagnosisMaster'
+        petBreedDesc:
+          type: string
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        policy:
+          $ref: '#/components/schemas/TContractPolicy'
+        csApplication:
+          $ref: '#/components/schemas/TCsApplication'
+      title: GetPolicyInfoResponse
+    TCsApplication:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        changeId:
+          type: integer
+          format: int64
+          description: change id
+        policyId:
+          type: integer
+          format: int64
+          description: policyId
+        applyTime:
+          type: string
+          format: date-time
+          description: apply time
+        csAppStatus:
+          type: integer
+          description: cs application status
+        verificationPolicy:
+          $ref: '#/components/schemas/TVerificationPolicy'
+        contractCustDeclList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TContractCustDecl'
+        contractDocList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TContractDoc'
+        uwApplicationList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TUwApplication'
+      title: TCsApplication
+    TContractPolicy:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        affinityCode:
+          type: string
+          description: affinity code
+        applyCode:
+          type: string
+          description: apply code
+        applyDate:
+          type: string
+          format: date-time
+          description: apply date
+        cancelNote:
+          type: string
+          description: cancel note
+        cancelOper:
+          type: integer
+          format: int64
+          description: cancel operator id
+        cancelTime:
+          type: string
+          format: date-time
+          description: cancel time
+        childObjects:
+          type: array
+          items:
+            type: object
+        comment:
+          type: string
+          description: comment
+        contractPolicyExclusionList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TContractPolicyExclusion'
+        contractPolicyHolder:
+          $ref: '#/components/schemas/TContractPolicyHolder'
+        contractProductList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TContractProduct'
+        contractSubjectPetList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TContractSubjectPet'
+        custAcceptResult:
+          type: string
+          description: customer acception result
+        dirtyObject:
+          type: boolean
+        endCause:
+          type: integer
+          format: int64
+          description: end cause
+        endDate:
+          type: string
+          format: date-time
+          description: end date
+        expiryDate:
+          type: string
+          format: date-time
+          description: expiry date
+        extendInfo:
+          type: object
+          description: extend info
+        initialValidateDate:
+          type: string
+          format: date-time
+          description: initial validate date
+        issueDate:
+          type: string
+          format: date-time
+          description: issue date
+        lapseCause:
+          type: string
+          description: lapse cause
+        lapseDate:
+          type: string
+          format: date
+          description: lapse date
+        lastHandleId:
+          type: integer
+          format: int64
+          description: last handler id
+        liabilityState:
+          type: integer
+          format: int64
+          description: policy liability state
+        nextOfficerId:
+          type: integer
+          format: int64
+          description: next officier id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        payNum:
+          type: integer
+          format: int64
+          description: pay number
+        phote1:
+          type: string
+          description: pet photo documet id
+        policyCode:
+          type: string
+          description: policy code
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        preContractDiv:
+          type: string
+          description: pre contract division
+        prePolicyNo:
+          type: string
+          description: prepolicy number
+        preSubscriberNo:
+          type: string
+          description: prepolicy subscriber number
+        proposalStatus:
+          type: integer
+          format: int64
+          description: proposal status
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        riskCommenceDate:
+          type: string
+          format: date-time
+          description: risk commencement date
+        shardKey:
+          type: integer
+          format: int64
+        thirdPartyPayFlg:
+          type: string
+          description: third party pay flag
+        userId:
+          type: integer
+          format: int64
+          description: bff user id
+        validateDate:
+          type: string
+          format: date-time
+        version:
+          type: integer
+          format: int64
+      title: TContractPolicy
+    TDiagnosisMaster:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        childObjects:
+          type: array
+          items:
+            type: object
+        diagnosisCode:
+          type: string
+        diagnosisDesc:
+          type: string
+        diagnosisName:
+          type: string
+        dirtyObject:
+          type: boolean
+        displayOrder:
+          type: string
+        exclusionPeriod:
+          type: integer
+          format: int32
+        groupId:
+          type: integer
+          format: int64
+        listId:
+          type: integer
+          format: int64
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        periodType:
+          type: integer
+          format: int32
+        productId:
+          type: integer
+          format: int64
+        referenceObjects:
+          type: array
+          items:
+            type: object
+      title: TDiagnosisMaster
+    TContractPolicyAgency:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        agencyId:
+          type: integer
+          format: int64
+          description: agency id
+        agencyMasterId:
+          type: integer
+          format: int64
+          description: agency master id
+        agencyOption:
+          type: string
+          description: agency option
+        childObjects:
+          type: array
+          items:
+            type: object
+        contractPolicyAgencyStaffs:
+          type: array
+          items:
+            $ref: '#/components/schemas/TContractPolicyAgencyStaff'
+        dirtyObject:
+          type: boolean
+        endDate:
+          type: string
+          format: date
+          description: end date
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        selfSpecialSign:
+          type: string
+          description: self special sign
+        shardKey:
+          type: integer
+          format: int64
+        shareRate:
+          type: number
+          description: share rate
+        startDate:
+          type: string
+          format: date
+          description: start date
+      title: TContractPolicyAgency
+    TContractPolicyAgencyStaff:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        agencyId:
+          type: integer
+          format: int64
+          description: agency id
+        agencyPaymentRate:
+          type: number
+          description: agency payment rate
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        endDate:
+          type: string
+          format: date
+          description: end date
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        shareRate:
+          type: number
+          description: share rate
+        staffId:
+          type: integer
+          format: int64
+          description: agency staff id
+        staffMasterId:
+          type: integer
+          format: int64
+          description: agency staff master id
+        startDate:
+          type: string
+          format: date
+          description: start date
+      title: TContractPolicyAgencyStaff
+    TContractPolicyExclusion:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        childObjects:
+          type: array
+          items:
+            type: object
+        diagnosisCode:
+          type: string
+          description: diagnosis code
+        dirtyObject:
+          type: boolean
+        endDate:
+          type: string
+          format: date
+          description: end date
+        exclusionCode:
+          type: string
+          description: exclusion code
+        exclusionId:
+          type: integer
+          format: int64
+          description: exclusion id
+        exclusionPeriod:
+          type: integer
+          format: int32
+          description: exclusion period
+        exclusionSeq:
+          type: integer
+          format: int32
+          description: exclusion sequence
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        periodType:
+          type: integer
+          format: int32
+          description: period type
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        startDate:
+          type: string
+          format: date
+          description: start date
+      title: TContractPolicyExclusion
+    TContractPolicyHolder:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        accoName:
+          type: string
+          description: account name
+        accountType:
+          type: integer
+          format: int32
+          description: account type
+        activeStatus:
+          type: integer
+          format: int64
+          description: active status
+        address1:
+          type: string
+          description: address1 kanji
+        address1Alias:
+          type: string
+          description: address1 kana
+        address2:
+          type: string
+          description: address2 kanji
+        address2Alias:
+          type: string
+          description: address2 kana
+        applicantAge:
+          type: integer
+          format: int64
+          description: applicant age
+        bankAccount:
+          type: string
+          description: bank account
+        bankCode:
+          type: string
+          description: bank code
+        birthDate:
+          type: string
+          format: date
+          description: birthday
+        branchCode:
+          type: string
+          description: branch code
+        cardSeq:
+          type: string
+          description: card sequence
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        email:
+          type: string
+          description: email
+        entryAge:
+          type: integer
+          format: int32
+          description: entry age
+        firstName:
+          type: string
+          description: first name kanji
+        firstName2:
+          type: string
+          description: first name kana
+        gender:
+          type: string
+          description: gender
+        identifyName:
+          type: string
+          description: identify name kana
+        identifyNameKaji:
+          type: string
+          description: identify name kanji
+        lastName:
+          type: string
+          description: last name kanji
+        lastName2:
+          type: string
+          description: last name kana
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        memberId:
+          type: string
+          description: member id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        postCode:
+          type: string
+          description: postcode
+        prefectureCode:
+          type: string
+          description: prefecture code
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        telephone:
+          type: string
+          description: telephone
+      title: TContractPolicyHolder
+    TContractPolicySpecialRule:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        endDate:
+          type: string
+          format: date
+          description: end date
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        ruleId:
+          type: integer
+          format: int64
+          description: rule id
+        ruleStatus:
+          type: integer
+          format: int64
+          description: rule status
+        ruleType:
+          type: integer
+          format: int64
+          description: rule type
+        shardKey:
+          type: integer
+          format: int64
+        startDate:
+          type: string
+          format: date
+          description: start date
+        terminalDate:
+          type: string
+          format: date
+          description: terminal date
+      title: TContractPolicySpecialRule
+    TContractProduct:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        amount:
+          type: number
+          description: sum assured
+        applyDate:
+          type: string
+          format: date-time
+          description: apply date
+        chargePeriod:
+          type: integer
+          description: charge period
+          format: int64
+        chargeYear:
+          type: integer
+          format: int64
+          description: charge year
+        childObjects:
+          type: array
+          items:
+            type: object
+        contractLiabList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TContractLiab'
+        countWay:
+          type: integer
+          format: int64
+          description: count way
+        coveragePeriod:
+          type: integer
+          format: int64
+          description: coverage period
+        coverageYear:
+          type: integer
+          format: int64
+          description: coverage year
+        dirtyObject:
+          type: boolean
+        dueDate:
+          type: string
+          format: date-time
+          description: due date
+        endCause:
+          type: integer
+          format: int64
+          description: end cause
+        endDate:
+          type: string
+          format: date-time
+          description: end date
+        expiryDate:
+          type: string
+          format: date-time
+          description: expiry date
+        initialType:
+          type: integer
+          format: int64
+          description: initial type
+        initialValidateDate:
+          type: string
+          format: date-time
+          description: initial validate date
+        itemId:
+          type: integer
+          format: int64
+          description: item id
+        lapseCause:
+          type: string
+          description: lapse cause
+        lapseDate:
+          type: string
+          description: lapse date
+          format: date
+        liabilityState:
+          description: liability state
+          type: integer
+          format: int64
+        masterId:
+          type: integer
+          format: int64
+          description: master item id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        paidupDate:
+          type: string
+          format: date-time
+          description: paidup date
+        payMode:
+          type: integer
+          format: int64
+          description: pay mode
+        planCode:
+          type: string
+          description: plan code
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        premCalcBase:
+          type: integer
+          format: int64
+          description: premium calculation base
+        premStatus:
+          type: integer
+          format: int64
+          description: premium status
+        premTerm:
+          type: number
+          description: regular premium
+        premYear:
+          type: number
+          description: yearly premium
+        productCode:
+          type: string
+          description: product code
+        productId:
+          type: integer
+          format: int64
+          description: product id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        riskCommenceDate:
+          type: string
+          format: date-time
+          description: risk commencement date
+        shardKey:
+          type: integer
+          format: int64
+        validateDate:
+          type: string
+          format: date-time
+          description: validate date
+      title: TContractProduct
+    TContractSubject:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        itemId:
+          type: integer
+          format: int64
+          description: item id
+        liabListId:
+          type: integer
+          format: int64
+          description: liability list id
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        subjectSeq:
+          type: integer
+          format: int64
+          description: subject sequence
+        subjectType:
+          type: integer
+          format: int64
+          description: subject type
+      title: TContractSubject
+    TContractSubjectInsured:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        accoName:
+          type: string
+          description: account name
+        accountType:
+          type: integer
+          format: int32
+          description: account type
+        activeStatus:
+          type: integer
+          format: int64
+          description: active status
+        address1:
+          type: string
+          description: address 1 kanji
+        address1Alias:
+          type: string
+          description: addess1 kana
+        address2:
+          type: string
+          description: address2 kanji
+        address2Alias:
+          type: string
+          description: address2 kana
+        bankAccount:
+          type: string
+          description: bank account
+        bankCode:
+          type: string
+          description: bank code
+        birthDate:
+          type: string
+          format: date
+          description: birthday
+        branchCode:
+          type: string
+          description: branch code
+        cardSeq:
+          type: string
+          description: card sequence
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        email:
+          type: string
+          description: email
+        firstName:
+          type: string
+          description: first name kanji
+        firstName2:
+          type: string
+          description: first name kana
+        gender:
+          type: string
+          description: gender
+        identifyName:
+          type: string
+          description: identify name kana
+        identifyNameKaji:
+          type: string
+          description: identify name kanji
+        lastName:
+          type: string
+          description: last name kanji
+        lastName2:
+          type: string
+          description: last name kana
+        memberId:
+          type: string
+          description: meber id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        postCode:
+          type: string
+          description: postcode
+        prefectureCode:
+          type: string
+          description: prefecture code
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        relationToPH:
+          type: integer
+          format: int64
+          description: relation to policy holder
+        shardKey:
+          type: integer
+          format: int64
+        subjectId:
+          type: integer
+          format: int64
+          description: subject id
+        subjectSeq:
+          type: integer
+          format: int64
+          description: subject sequence
+        telephone:
+          type: string
+          description: telephone number
+      title: TContractSubjectInsured
+    TContractSubjectPet:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        birthDate:
+          type: string
+          format: date
+          description: birthday
+        birthDateDiv:
+          type: string
+          description: birthday division
+        childObjects:
+          type: array
+          items:
+            type: object
+        contraception:
+          type: string
+          description: contraception
+        deathDate:
+          type: string
+          format: date-time
+          description: death date
+        dirtyObject:
+          type: boolean
+        gender:
+          type: string
+          description: gender
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        petBreed:
+          type: integer
+          format: int64
+          description: pet breed
+        petName:
+          type: string
+          description: pet name kanji
+        petNameKana:
+          type: string
+          description: pet name kana
+        petType:
+          type: integer
+          format: int64
+          description: pet type
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        subjectId:
+          type: integer
+          format: int64
+          description: subject id
+        subjectSeq:
+          type: integer
+          format: int64
+          description: subject sequence
+        weight:
+          type: number
+          description: weight
+      title: TContractSubjectPet
+    TContractBene:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        accoName:
+          type: string
+          description: account name
+        accountType:
+          type: integer
+          description: account type
+          format: int32
+        activeStatus:
+          type: integer
+          format: int64
+          description: active status
+        address1:
+          type: string
+          description: address1 kanji
+        address1Alias:
+          type: string
+          description: address1 kana
+        address2:
+          type: string
+          description: address2 kanji
+        address2Alias:
+          type: string
+          description: address2 kana
+        bankAccount:
+          type: string
+          description: bank account
+        bankCode:
+          type: string
+          description: bank code
+        beneType:
+          type: integer
+          format: int64
+          description: beneciary type
+        branchCode:
+          type: string
+          description: branch code
+        childObjects:
+          type: array
+          items:
+            type: object
+        designation:
+          type: integer
+          format: int64
+          description: designation
+        dirtyObject:
+          type: boolean
+        email:
+          type: string
+          description: email
+        firstName:
+          type: string
+          description: first name kanji
+        firstName2:
+          type: string
+          description: first name kana
+        identifyName:
+          type: string
+          description: identify name kana
+        identifyNameKaji:
+          type: string
+          description: identify name kanji
+        lastName:
+          type: string
+          description: last name kanji
+        lastName2:
+          type: string
+          description: last name kana
+        legalBene:
+          type: string
+          description: legal beneciary
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        postCode:
+          type: string
+          description: postcode
+        prefectureCode:
+          type: string
+          description: prefecture code
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        shareOrder:
+          type: integer
+          format: int64
+          description: share order
+        shareRate:
+          type: number
+          description: share rate
+        telephone:
+          type: string
+          description: telephone number
+      title: TContractBene
+    TContractCustDecl:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        activeStatus:
+          type: integer
+          format: int64
+          description: active status
+        childObjects:
+          type: array
+          items:
+            type: object
+        declAnswer:
+          type: string
+          description: declaration answer
+        declDate:
+          type: string
+          format: date-time
+          description: declaration date
+        declImage:
+          type: string
+          description: declaration other information
+        declNo:
+          type: string
+          description: declaration number
+        dirtyObject:
+          type: boolean
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        outsideAgencyName:
+          type: string
+        outsideFlag:
+          type: string
+        outsidePolicyCode:
+          type: string
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+      title: TContractCustDecl
+    TContractDoc:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        changeId:
+          type: integer
+          format: int64
+          description: change id
+        childObjects:
+          type: array
+          items:
+            type: object
+        comment:
+          type: string
+          description: comment
+        dirtyObject:
+          type: boolean
+        docId:
+          type: string
+          description: document id
+        docType:
+          type: integer
+          format: int64
+          description: document type
+        inqNo:
+          type: string
+          description: inquiry number
+        isDel:
+          type: string
+          description: is deleted
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        name:
+          type: string
+          description: name
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        source:
+          type: integer
+          format: int64
+          description: source
+        uploadTime:
+          type: string
+          format: date-time
+          description: upload time
+      title: TContractDoc
+    TContractLiab:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        amount:
+          type: number
+          description: sum assured
+        childObjects:
+          type: array
+          items:
+            type: object
+        contractSubjectList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TContractSubject'
+        dirtyObject:
+          type: boolean
+        itemId:
+          type: integer
+          format: int64
+          description: item id
+        liabId:
+          type: integer
+          format: int64
+          description: liability id
+        liabListId:
+          type: integer
+          format: int64
+          description: liability list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        premTerm:
+          type: number
+          description: regular premium
+        premYear:
+          type: number
+          description: yearly premium
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+      title: TContractLiab
+    TRenewPolicy:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        precontTime:
+          type: string
+          format: date-time
+          description: precont time
+        proposalStatus:
+          type: integer
+          format: int64
+          description: proposal status
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        renewEndCause:
+          type: integer
+          format: int32
+          description: renew end cause
+        renewPolicyId:
+          type: integer
+          format: int64
+          description: renew policy id
+        renewProductList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TRenewProduct'
+        renewStatus:
+          type: integer
+          format: int32
+          description: renew status
+        shardKey:
+          type: integer
+          format: int64
+      title: TRenewPolicy
+    TRenewProduct:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        amount:
+          type: number
+          description: sum assured
+        chargePeriod:
+          type: integer
+          format: int64
+          description: charge period
+        chargeYear:
+          type: integer
+          format: int64
+          description: charge year
+        childObjects:
+          type: array
+          items:
+            type: object
+        contracetion:
+          type: string
+          description: contraception
+        countWay:
+          type: integer
+          format: int64
+          description: count way
+        coveragePeriod:
+          type: integer
+          format: int64
+          description: coverage period
+        coverageYear:
+          type: integer
+          format: int64
+          description: coverage year
+        dirtyObject:
+          type: boolean
+        dueDate:
+          type: string
+          format: date-time
+          description: due date
+        endCause:
+          type: string
+          description: end cause
+        endDate:
+          type: string
+          format: date-time
+          description: end date
+        expiryDate:
+          type: string
+          format: date-time
+          description: expiry date
+        initialType:
+          type: integer
+          format: int64
+          description: initial type
+        itemId:
+          type: integer
+          format: int64
+          description: item id
+        liabilityState:
+          type: integer
+          format: int64
+          description: liability state
+        liabilityStateDate:
+          type: string
+          format: date
+          description: liability state start date
+        masterId:
+          type: integer
+          format: int64
+          description: master item id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        paidupDate:
+          type: string
+          format: date-time
+          description: payup date
+        payMode:
+          type: integer
+          format: int64
+          description: pay mode
+        planCode:
+          type: string
+          description: play code
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        premCalcBase:
+          type: integer
+          format: int64
+          description: premium calculation base
+        premStatus:
+          type: integer
+          format: int64
+          description: premium payment status
+        premTerm:
+          type: number
+          description: regular premium
+        premYear:
+          type: number
+          description: yearly premium
+        productCode:
+          type: string
+          description: product code
+        productId:
+          type: integer
+          format: int64
+          description: product id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        renewItemId:
+          type: integer
+          format: int64
+          description: renew item id
+        renewPolicyId:
+          type: integer
+          format: int64
+          description: renew policy id
+        renewStatus:
+          type: integer
+          format: int32
+          description: renew status
+        shardKey:
+          type: integer
+          format: int64
+        validateDate:
+          type: string
+          format: date-time
+          description: validate date
+        weight:
+          type: number
+          description: weight
+      title: TRenewProduct
+    TUwApplication:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        changeId:
+          type: integer
+          format: int64
+          description: change id
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        extendInfo:
+          type: object
+        isLastUw:
+          type: string
+          description: is last underwriting
+        nextAssignee:
+          type: integer
+          format: int64
+          description: next officer id
+        nextUwGroup:
+          type: string
+          description: next underwriting user group
+        noticeEmail:
+          type: string
+          description: notice email
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        outSidePaymentInfo:
+          type: string
+          description: outside payment information
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        preUwId:
+          type: integer
+          format: int64
+          description: pre-underwriting id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        source:
+          type: integer
+          format: int64
+          description: business source
+        underWriteDate:
+          type: string
+          format: date-time
+          description: underwriting date
+        underWriter:
+          type: integer
+          format: int64
+          description: underwriter id
+        uwCheckList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TUwCheck'
+        uwComment:
+          type: string
+          description: underwriting comment
+        uwExclusionList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TUwExclusion'
+        uwGroup:
+          type: string
+          description: underwriting user group
+        uwId:
+          type: integer
+          format: int64
+          description: underwriting id
+        uwLevel:
+          type: string
+          description: underwriting level
+        uwMethod:
+          type: string
+          description: underwriting method
+        uwPolicyList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TUwPolicy'
+        uwResult:
+          type: integer
+          format: int64
+          description: underwriting result
+        uwStatus:
+          type: integer
+          format: int64
+          description: underwriting status
+        uwTimes:
+          type: integer
+          format: int64
+          description: underwriting times
+      title: TUwApplication
+    TUwCheck:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        changeId:
+          type: integer
+          format: int64
+          description: change id
+        checkResult:
+          type: string
+          description: check result
+        checkType:
+          type: integer
+          format: int64
+          description: check type
+        childObjects:
+          type: array
+          items:
+            type: object
+        comment:
+          type: string
+          description: comment
+        confirmDate:
+          type: string
+          format: date-time
+          description: confirm date
+        confirmOwner:
+          type: string
+          description: confirm officier id
+        confirmResult:
+          type: string
+          description: confirm result
+        dirtyObject:
+          type: boolean
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        uwCheckId:
+          type: integer
+          format: int64
+          description: underwriting check id
+        uwId:
+          type: integer
+          format: int64
+          description: underwriting id
+      title: TUwCheck
+    TUwExclusion:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        changeId:
+          type: integer
+          format: int64
+        childObjects:
+          type: array
+          items:
+            type: object
+        diagnosisCode:
+          type: string
+          description: diagnosis code
+        dirtyObject:
+          type: boolean
+        endDate:
+          type: string
+          format: date
+          description: end date
+        exclusionCode:
+          type: string
+          description: exclusion code
+        exclusionPeriod:
+          type: integer
+          format: int32
+          description: exclusion period
+        exclusionSeq:
+          type: integer
+          format: int32
+          description: exclusion sequence
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        periodType:
+          type: integer
+          format: int32
+          description: exclusion period type
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        startDate:
+          type: string
+          format: date
+          description: start date
+        uwExclusionId:
+          type: integer
+          format: int64
+          description: underwriting exclusion id
+        uwId:
+          type: integer
+          format: int64
+          description: underwriting id
+      title: TUwExclusion
+    TUwPolicy:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        changeId:
+          type: integer
+          format: int64
+          description: change id
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        rejectionReason:
+          type: integer
+          format: int64
+          description: reject reason
+        shardKey:
+          type: integer
+          format: int64
+        uwComment:
+          type: string
+          description: underwriting comment
+        uwId:
+          type: integer
+          format: int64
+          description: underwriting id
+        uwPolicyCheckList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TUwPolicyCheck'
+        uwPolicyId:
+          type: integer
+          format: int64
+          description: underwriting policy id
+        uwProductList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TUwProduct'
+        uwResult:
+          type: integer
+          format: int64
+          description: underwriting result
+        uwStatus:
+          type: integer
+          format: int64
+          description: underwriting status
+      title: TUwPolicy
+    TUwPolicyCheck:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        changeId:
+          type: integer
+          format: int64
+          description: change id
+        checkResult:
+          type: string
+          description: check result
+        checkType:
+          type: integer
+          format: int64
+          description: check type
+        childObjects:
+          type: array
+          items:
+            type: object
+        comment:
+          type: string
+          description: comment
+        confirmDate:
+          type: string
+          format: date-time
+          description: confirm date
+        confirmOwner:
+          type: string
+          description: confirm owner
+        confirmResult:
+          type: string
+          description: confirm result
+        dirtyObject:
+          type: boolean
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        uwCheckId:
+          type: integer
+          format: int64
+          description: underwriting check id
+        uwId:
+          type: integer
+          format: int64
+          description: underwriting id
+        uwPolicyId:
+          type: integer
+          format: int64
+          description: underwriting policy id
+      title: TUwPolicyCheck
+    TUwProduct:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        actualPay:
+          type: number
+        changeId:
+          type: integer
+          format: int64
+          description: change id
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        extendInfo:
+          type: object
+        itemId:
+          type: integer
+          format: int64
+          description: item id
+        keepValid:
+          type: string
+          description: keep valid
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        payMonth:
+          type: integer
+          format: int64
+          description: pay month
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        uwId:
+          type: integer
+          format: int64
+          description: underwriting id
+        uwPolicyId:
+          type: integer
+          format: int64
+          description: underwriting policy id
+        uwProductId:
+          type: integer
+          format: int64
+          description: underwriting product id
+      title: TUwProduct
+    TVerificationPolicy:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        changeId:
+          type: integer
+          format: int64
+          description: change id
+        childObjects:
+          type: array
+          items:
+            type: object
+        defectSendStatus:
+          type: integer
+          format: int64
+          description: defect send status
+        dirtyObject:
+          type: boolean
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        source:
+          type: integer
+          format: int64
+          description: business source
+        verificationComment:
+          type: string
+          description: verification comment
+        verificationDate:
+          type: string
+          format: date-time
+          description: verification date
+        verificationId:
+          type: integer
+          format: int64
+          description: verification id
+        verificationInputComment:
+          type: string
+          description: verification input comment
+        verificationInputResult:
+          type: string
+          description: vreification input result
+        verificationOwner:
+          type: integer
+          format: int64
+          description: verification owner
+        verificationResult:
+          type: string
+          description: verification result
+      title: TVerificationPolicy
+    TContractDiagnosisDecl:
+      type: object
+      properties:
+        contraceptionDate:
+          type: string
+          description: contraception date
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        policyId:
+          type: integer
+          format: int64
+          description: policy id
+        hasOtherJoin:
+          type: string
+          description: insured By Other Company
+        otherCompanyName:
+          type: string
+          description: Other company name
+        declaration2DetailInfoList:
+          type: array
+          description: illness2 list
+          items:
+            $ref: '#/components/schemas/Declaration2DetailInfo'
+        declaration3DetailInfoList:
+          type: array
+          description: illness3 list
+          items:
+            $ref: '#/components/schemas/Declaration3DetailInfo'
+        gender:
+          type: string
+          description: gender
+        otherHolderName:
+          type: string
+          description: Other policy holder name
+        otherPolicyNumber:
+          type: string
+          description: Other policy number
+        contraception:
+          type: string
+          description: contraception
+      title: TContractDiagnosisDecl
+    Declaration2DetailInfo:
+      type: object
+      properties:
+        detailListId:
+          type: integer
+          format: int64
+          description: detail List Id
+        declListId:
+          format: int64
+          description: decl list id
+        bodySiteCode:
+          type: string
+          description: body site code
+        hasDisease:
+          type: string
+          description: if has this illness
+        diagnosisCode:
+          type: string
+          description: diagnosis code
+        diseaseDate:
+          type: string
+          description: disease date
+        diseaseStatus:
+          type: string
+          description: disease status
+        examinationResultDocId:
+          type: string
+          description: examination result document id
+        hasHistory:
+          type: string
+          description: hasHistory
+        healingDate:
+          type: string
+          description: healing date
+        otherDiagnosisDesc:
+          type: string
+          description: Other diagnosis description
+        treatmentMethod:
+          description: treatment method
+        otherTreatmentMethod:
+          description: Other treatment method
+      title: Declaration2DetailInfo
+    Declaration3DetailInfo:
+      type: object
+      properties:
+        declListId:
+          type: integer
+          format: int64
+          description: decl list id
+        vaccineOrNot:
+          type: string
+          description: Vaccination or not
+        vaccineCode:
+          type: string
+          description: vaccine code
+        vaccineDate:
+          type: string
+          description: Vaccination date
+      title: Declaration3DetailInfo
+    GenericValidationResult:
+      type: object
+      properties:
+        code:
+          type: string
+          description: result code
+        message:
+          type: string
+          description: return message
+      title: GenericValidationResult
+    CalcPremByGiProductCodeResponse:
+      type: object
+      properties:
+        calcResult:
+          type: number
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: CalcPremByGiProductCodeResponse
+    FileUploadResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        fileUrl:
+          type: string
+          description: ファイル格納先URL
+      title: FileUploadResponse
+    DoPolicyUpdateForRenewRequest:
+      type: object
+      properties:
+        planCode:
+          type: string
+          description: 補償プラン
+        policyId:
+          type: integer
+        weight:
+          type: number
+          description: 現在の体重
+        contraception:
+          type: string
+          description: 去勢・避妊
+    GetPlanDetailRequest:
+      type: object
+      properties:
+        planCode:
+          type: string
+    DoPolicyUpdateForRenewResponse:
+      type: object
+      properties:
+        changeId:
+          type: integer
+          format: int64
+          description: 異動番号
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: AutoRenewStopResponse
+    SaveCardRequest:
+      type: object
+      properties:
+        cardToken:
+          type: string
+          description: card token
+        cardSeq:
+          type: string
+          description: card sequence
+        memberId:
+          type: string
+          description: member id
+        policyId:
+          type: string
+          description: policy id
+    SaveCardResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: GetPlanDetailResponse
+    ProductList:
+      type: object
+      properties:
+        productCode:
+          type: string
+        liabList:
+          type: array
+          items:
+            $ref: '#/components/schemas/LiabList'
+    LiabList:
+      type: object
+      properties:
+        payRate:
+          type: string
+          description: 支払割合
+    GetPlanDetailResponse:
+      type: object
+      properties:
+        beInHospitalPrem:
+          type: string
+          description: 通院
+        hospitalPrem:
+          type: string
+          description: 入院
+        operPrem:
+          type: string
+          description: 手術
+        productList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductList'
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: GetPlanDetailResponse
+    AutoRenewStopRequest:
+      type: object
+      properties:
+        policyId:
+          type: integer
+          format: int64
+          description: policyId
+    AutoRenewStopResponse:
+      type: object
+      properties:
+        changeId:
+          type: integer
+          format: int64
+          description: 異動番号
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: AutoRenewStopResponse
+    ChangePetPortrayRequest:
+      type: object
+      properties:
+        portrayUrl:
+          type: string
+          description: url
+        policyId:
+          type: integer
+          format: int64
+          description: policyId
+    ChangePetPortrayResponse:
+      type: object
+      properties:
+        changeId:
+          type: integer
+          format: int64
+          description: 異動番号
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: CsApplicationResponse
+    NewPolicyListResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        diagnosisMasters:
+          type: array
+          items:
+            $ref: '#/components/schemas/TDiagnosisMaster'
+        petBreeds:
+          type: array
+          items:
+            $ref: '#/components/schemas/TPetBreed'
+        planCfgModelList:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlanCfgModel'
+        policies:
+          type: array
+          items:
+            $ref: '#/components/schemas/BffPolicyListInfo'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        user:
+          $ref: '#/components/schemas/TUser'
+      title: NewPolicyListResponse
+    CoverageModel:
+      type: object
+      properties:
+        annualPrem:
+          type: number
+          description: yearly premium
+        chargePeriod:
+          type: string
+          description: charge period
+        chargeYear:
+          type: integer
+          format: int64
+          description: charge year
+        coveragePeriod:
+          type: string
+          description: coverage period
+        coverageYear:
+          type: integer
+          format: int64
+          description: coverage year
+        initialType:
+          type: integer
+          format: int64
+          description: initial type
+        prem:
+          type: number
+          description: premium
+        productCode:
+          type: string
+          description: product code
+        productName:
+          type: string
+          description: product name
+        riskCommenceDate:
+          type: string
+          description: risk commencement date
+        validateDate:
+          type: string
+          description: validate date
+      title: CoverageModel
+    BffPolicyListInfo:
+      type: object
+      properties:
+        tContractPolicy:
+          $ref: '#/components/schemas/TContractPolicy'
+        tContractDiagnosisDeclList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TContractDiagnosisDecl'
+        tCsApplicationList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TCsApplication'
+        tRenewPolicyList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TRenewPolicy'
+      title: BffPolicyListInfo
+    PolicyListRequest:
+      type: object
+      properties:
+        certiCode:
+          type: string
+          description: bff user id
+      title: PolicyListRequest
+    TUser:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        accoName:
+          type: string
+          description: account name
+        accountType:
+          type: integer
+          format: int32
+          description: account type
+        activeStatus:
+          type: integer
+          format: int64
+          description: active status
+        address1:
+          type: string
+          description: address1 kanji
+        address1Alias:
+          type: string
+          description: address1 kana
+        address2:
+          type: string
+          description: address2 kanji
+        address2Alias:
+          type: string
+          description: address2 kana
+        bankAccount:
+          type: string
+          description: bank account
+        bankCode:
+          type: string
+          description: bank code
+        birthDate:
+          type: string
+          format: date
+          description: birthday
+        branchCode:
+          type: string
+          description: branch code
+        cardSeq:
+          type: string
+          description: card sequence
+        childObjects:
+          type: array
+          items:
+            type: object
+        dateOffset:
+          type: integer
+          format: int32
+          description: date offset
+        deptCode:
+          type: string
+          description: department code
+        dirtyObject:
+          type: boolean
+        displayUserName:
+          type: string
+          description: display user name
+        email:
+          type: string
+          description: email
+        emailNotifyIndi:
+          type: string
+          description: email notify indicator
+        extendInfo:
+          type: object
+          additionalProperties:
+            type: object
+        failCount:
+          type: integer
+          format: int32
+          description: fail count
+        firstName:
+          type: string
+          description: first name kanji
+        firstName2:
+          type: string
+          description: first name kana
+        gender:
+          type: string
+          description: gender
+        initialPwd:
+          type: string
+          description: initial password
+        ipRestriction:
+          type: integer
+          format: int32
+          description: ip restriction
+        lastName:
+          type: string
+          description: last name kanji
+        lastName2:
+          type: string
+          description: last name kana
+        manageFlag:
+          type: string
+          description: namage flag
+        memberId:
+          type: string
+          description: member id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        partyId:
+          type: integer
+          format: int64
+          description: party id
+        postCode:
+          type: string
+          description: postcode
+        prefectureCode:
+          type: string
+          description: prefecture code
+        realName:
+          type: string
+          description: real name
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        telephone:
+          type: string
+          description: telephone
+        tempUserServiceId:
+          type: integer
+          format: int64
+        title:
+          type: string
+          description: title
+        uid:
+          type: string
+          description: uid
+        userAffinityList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TUserAffinity'
+        userDisable:
+          type: string
+          description: user disable status
+        userId:
+          type: integer
+          format: int64
+          description: user id
+        userName:
+          type: string
+          description: user name
+        userSignList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TUserSign'
+        userType:
+          type: integer
+          format: int64
+          description: user type
+        version:
+          type: integer
+          format: int64
+          description: version
+      title: TUser
+    TUserAffinity:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        affinityCode:
+          type: string
+          description: affinity code
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        isDel:
+          type: string
+          description: is delete
+        listId:
+          type: integer
+          description: list id
+          format: int64
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+          description: user id
+      title: TUserAffinity
+    TSignCode:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        childObjects:
+          type: array
+          items:
+            type: object
+        comment:
+          type: string
+          description: comment
+        dirtyObject:
+          type: boolean
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        signName:
+          type: string
+          description: sign name
+        signNo:
+          type: string
+          description: sign number
+        signType:
+          type: integer
+          format: int32
+          description: sign type
+        type:
+          type: string
+          description: type
+      title: TSignCode
+    TUserSign:
+      type: object
+      properties:
+        '@pk':
+          type: integer
+          format: int64
+        TempData:
+          type: object
+        childObjects:
+          type: array
+          items:
+            type: object
+        dirtyObject:
+          type: boolean
+        listId:
+          type: integer
+          format: int64
+          description: list id
+        oldPrimaryKey:
+          type: integer
+          format: int64
+        referenceObjects:
+          type: array
+          items:
+            type: object
+        shardKey:
+          type: integer
+          format: int64
+        signCode:
+          $ref: '#/components/schemas/TSignCode'
+        signListId:
+          type: integer
+          format: int64
+          description: sign list id
+        userId:
+          type: integer
+          format: int64
+          description: user id
+      title: TUserSign
+    FileDownloadRequest:
+      type: object
+      properties:
+        fileUrl:
+          type: string
+          description: 文書格納先URL
+    Resource:
+      type: object
+      properties:
+        description:
+          type: string
+        file:
+          $ref: '#/components/schemas/File'
+        filename:
+          type: string
+        inputStream:
+          $ref: '#/components/schemas/InputStream'
+        open:
+          type: boolean
+        readable:
+          type: boolean
+        uri:
+          $ref: '#/components/schemas/URI'
+        url:
+          $ref: '#/components/schemas/URL'
+      title: Resource
+    InputStream:
+      type: object
+      title: InputStream
+    URI:
+      type: object
+      properties:
+        absolute:
+          type: boolean
+        authority:
+          type: string
+        fragment:
+          type: string
+        host:
+          type: string
+        opaque:
+          type: boolean
+        path:
+          type: string
+        port:
+          type: integer
+          format: int32
+        query:
+          type: string
+        rawAuthority:
+          type: string
+        rawFragment:
+          type: string
+        rawPath:
+          type: string
+        rawQuery:
+          type: string
+        rawSchemeSpecificPart:
+          type: string
+        rawUserInfo:
+          type: string
+        scheme:
+          type: string
+        schemeSpecificPart:
+          type: string
+        userInfo:
+          type: string
+      title: URI
+    URL:
+      type: object
+      properties:
+        authority:
+          type: string
+        content:
+          type: object
+        defaultPort:
+          type: integer
+          format: int32
+        file:
+          type: string
+        host:
+          type: string
+        path:
+          type: string
+        port:
+          type: integer
+          format: int32
+        protocol:
+          type: string
+        query:
+          type: string
+        ref:
+          type: string
+        userInfo:
+          type: string
+      title: URL
+    File:
+      type: object
+      properties:
+        absolute:
+          type: boolean
+        absoluteFile:
+          $ref: '#/components/schemas/File'
+        absolutePath:
+          type: string
+        canonicalFile:
+          $ref: '#/components/schemas/File'
+        canonicalPath:
+          type: string
+        directory:
+          type: boolean
+        file:
+          type: boolean
+        freeSpace:
+          type: integer
+          format: int64
+        hidden:
+          type: boolean
+        name:
+          type: string
+        parent:
+          type: string
+        parentFile:
+          $ref: '#/components/schemas/File'
+        path:
+          type: string
+        totalSpace:
+          type: integer
+          format: int64
+        usableSpace:
+          type: integer
+          format: int64
+      title: File
+    UpdateDiagnosiDescRequest:
+      type: object
+      properties:
+        otherCompanyName:
+          type: string
+          description: Other company name
+        policyId:
+          type: integer
+          format: int64
+          description: policyId
+        otherHolderName:
+          type: string
+          description: Other policy holder name
+        otherPolicyNumber:
+          type: string
+          description: Other policy number
+      title: UpdateDiagnosiDescRequest
+    UpdateDiagnosisDescResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        updateResult:
+          type: boolean
+          example: false
+          description: update result
+      title: UpdateDiagnosisDescResponse
+    UpdateBankAccountRequest:
+      type: object
+      properties:
+        bankCode:
+          type: string
+          description: 金融機関Code
+        branchCode:
+          type: string
+          description: 支店code
+        accountType:
+          type: integer
+          description: 口座種別;1-普通;2-当座;3-貯蓄
+        bankAccount:
+          type: string
+          description: 口座番号
+        accoName:
+          type: string
+          description: 口座名義人（カナ）
+        version:
+          type: number
+          description: version
+      title: UpdateBankAccountRequest
+    UpdateBankAccountResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        verion:
+          type: number
+          description: vesion
+      title: UpdateBankAccountResponse
+    RegisterClaimCaseRequest:
+      type: object
+      properties:
+        policyId:
+          type: integer
+          description: policyId
+        claimReuqestDocInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClaimReuqestDocInfo'
+        claimRequestInfo:
+          $ref: '#/components/schemas/ClaimRequestInfo'
+      title: RegisterClaimCaseRequest
+    ClaimReuqestDocInfo:
+      type: object
+      properties:
+        docType:
+          type: integer
+          description: 1-pet画像；2-混合ワクチン接種証明書のアップロード;3-診療明細書のアップロード
+        docUrl:
+          type: string
+          description: docUrl
+      title: ClaimReuqestDocInfo
+    ClaimRequestInfo:
+      type: object
+      properties:
+        consultationIndi:
+          type: string
+          description: Y-通院有；N-通院無
+        hospitalIndi:
+          type: string
+          description: Y-入院有；N-入院無
+        surgeryIndi:
+          type: string
+          description: Y-手術有；N-手術無
+        diagnosisDate:
+          type: string
+          format: date
+          example: 2099-12-31
+          description: 診察日
+        hospitalName:
+          type: string
+          description: 病院名
+        hospitalTel:
+          type: string
+          description: 病院電話番号
+        diagnosisRegion:
+          type: string
+          description: 該当の部位
+        accidentTime:
+          type: string
+          description: 発症日
+        treatProcess:
+          type: string
+          description: 治療に至るまでの経緯
+        illnessStatus:
+          type: string
+          description: ケガ・病気の状態;1-完治;2-治療中;3-経過観測中※
+        symptomsStillContinuing:
+          type: string
+          description: 現在も症状が続；Y-はい;N-いいえ
+        sameIllnessBfIndi:
+          type: string
+          description: 過去にも同じ症状を発症；Y-はい;N-いいえ
+        seenDoctorThisTime:
+          type: string
+          description: 今回、診察は受けましたか;1-はい;2-いいえ;3-いいえ（薬の受け取りのみ）
+        inhospitalTreats:
+          type: string
+          description: 病院内で行った検査・処置;1-注射,2-点滴,3-処置,4-手術,5-手術,6-検査,7-その他（複数選択時のカンマ分割）
+        treatmentContent:
+          type: string
+          description: 処置・手術・検査の内容をご記入ください
+        takeMedicineIndi:
+          type: string
+          description: 薬の持ち帰りは；1-はい（診療明細に薬品・製品名の記載あり）；2-はい（診療明細に薬品・製品名の記載なし）；3-いいえ
+        medicineName:
+          type: string
+          description: 薬品名・製品名
+        takeSupplementsMedicine:
+          type: string
+          description: サプリメント、海外薬、漢方薬、その他物品などの持ち帰；1-はい（診療明細に薬品・製品名の記載あり）；2-はい（診療明細に薬品・製品名の記載なし）；3-いいえ
+        supplementsMedicineName:
+          type: string
+          description: 薬品名・製品名
+        takePrescriptionIndi:
+          type: string
+          description: 処方食（療法食）の処方；1-はい（持ち帰り）;2-はい（病院内使用）;3-はい（持ち帰りと病院内使用）;4-いいえ
+        prescriptionQuantity:
+          type: integer
+          description: 持ち帰り数量を
+        takePreventInsectMedicineIndi:
+          type: string
+          description: フィラリア予防薬・ダニ駆虫薬の処方;1-はい（予防）;2-はい（治療）;3-いいえ
+        takeShampooPrescription:
+          type: string
+          description: シャンプーやイヤークリーナーの処方;1-はい（予防）;2-はい（治療）;3-いいえ
+      title: ClaimRequestInfo
+    RegisterClaimCaseResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+        updateResult:
+          type: boolean
+          example: false
+          description: update result
+      title: RegisterClaimCaseResponse
+    GetBodySiteDiagnosisRequest:
+      type: object
+      properties:
+        bodySiteCode:
+          type: string
+          description: body site code
+      title: GetBodySiteDiagnosisRequest
+    GetBodySiteDiagnosisResponse:
+      type: object
+      properties:
+        bodySiteDiagnosisCfgList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TBodySiteDiagnosisCfg'
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericValidationResult'
+        result:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '-1'
+      title: GetBodySiteDiagnosisResponse
